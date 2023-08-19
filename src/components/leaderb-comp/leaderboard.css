@@ -1,0 +1,95 @@
+/* leaderboard.css */
+
+/* Style for the container */
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #090909;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    color: #000000;
+  }
+  
+  /* Style for the title */
+  .mt-4 {
+    margin-top: 20px;
+  }
+  
+  /* Style for the DataTable */
+  .custom-table {
+    margin-top: 20px;
+  }
+  
+  /* Style for table header */
+  .rdt_TableHead {
+    background-color: #991010;
+    font-weight: bold;
+    color:#000000;
+
+  }
+  
+  /* Style for table rows */
+  .rdt_TableRow {
+    border-bottom:  solid #000000;
+  }
+  
+  /* Style for table cells */
+  .rdt_TableCell {
+    padding: 10px;
+    
+  }
+  
+  /* Style for odd rows */
+  .rdt_TableRow:not(.rdt_TableRowStacked):nth-child(odd) {
+    background-color: #0c0c0c;
+  }
+  .rdt_TableRow:not(.rdt_TableRowStacked):nth-child(even) {
+    background-color: #0c0c0c;
+  }
+  /* Style for pagination */
+  .pagination {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination .rdt_TablePagination {
+    margin: 0;
+  }
+  
+  .pagination .rdt_TablePagination-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .pagination .rdt_TablePagination-list li {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  /* Style for active page */
+  .pagination .rdt_TablePagination-list .active {
+    font-weight: bold;
+  }
+  
+  /* Style for page buttons */
+  .pagination .rdt_TablePagination-list li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .pagination .rdt_TablePagination-list li a:hover {
+    color: #007bff;
+  }
+  
+  .sc-eLSjS{
+    color:#000000
+  }
+
+  .searchFunc2{
+    color:#000000
+  }

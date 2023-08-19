@@ -1,0 +1,30 @@
+.navbar{
+overflow-y: hidden;
+left: 0;
+bottom: 0;
+  width: 100%;
+    color: #ffffff;
+    height: 55px;
+    background: rgb(14,0,36);
+    justify-content: center;
+  font-family: 'Open Sans', sans-serif; /* Apply the "Open Sans" font */
+
+    background: linear-gradient(104deg, rgba(14,0,36,1) 7%, rgba(26,12,45,1) 30%, rgba(61,21,163,1) 52%, rgba(13,5,25,1) 88%);
+  }
+
+.logo {
+    height: 30px;
+    width: 30px;
+}
+
+.nav-link {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-link:hover{
+  color:#0d6efd;
+}

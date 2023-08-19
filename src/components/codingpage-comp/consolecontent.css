@@ -1,0 +1,19 @@
+.chaljabhai {
+    /* margin: 55px 20px 20px 20px; */
+    color: white;
+    margin-bottom: 500px;
+    background-color: black;
+    display: grid;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: fixed;
+    box-shadow: 3px 3px 3px gray;
+    
+}
+
+@keyframes fadeInUp {
+    to {
+      /* opacity: 1; */
+      transform: scale(1);
+    }
+  }

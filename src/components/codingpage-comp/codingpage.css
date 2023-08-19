@@ -1,0 +1,666 @@
+/* Head strip for ques no , score and timer */
+.mainBody{
+    overflow-y:hidden;
+position:relative;
+  /* height: 100vh; */
+  width: 1800px;
+  background: rgb(6,4,32);
+  /* background: linear-gradient(90deg  rgb(51, 8, 89) 28%, rgb(45, 9, 67) 48%, rgb(41, 8, 74) 81%, rgba(5,5,36,1) 91%); */
+ position:relative;
+    /* background-image: linear-gradient(201deg, #064346 -23%, #12100e 130%); */
+    /* background-image: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgba(127,58,180,1) 48%, rgba(9,8,74,1) 81%, rgba(5,5,36,1) 91%); */
+    /* background-color: #010B19; */
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding-bottom: 55px;
+  
+}
+.testing{
+color: #fff;
+}
+
+.head-strip{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 7vh;
+  /* margin:  auto; */
+  /* width: 98vw; */
+  border: 1px solid black;
+  /* border-radius: 20px; */
+  /* background: #022527;   */
+}
+.iop{
+  padding-right:100px;
+}
+
+.queno{
+  display: inline ;
+  margin: 0px 15px;
+}
+.questions{
+  margin: auto;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* background: #161f34; */
+  width: 54vw;
+ 
+}
+
+.rc-input-output{
+  padding-right: 30px;
+}
+.qb{
+  /* border-radius: 100%;  */
+  background-color: linear-gradient(201deg, #145f63 -23%, #3c3935 130%);  
+  border-width: 3px;
+  border-color: rgba(114, 50, 163, 0.911);
+  box-shadow: 0 0 10px rgb(68, 127, 107);  
+  color: white;
+}
+.ace-cobalt .ace_gutter {
+  background: #022527;
+  color: rgb(128,145,160);
+}
+.ace-cobalt {
+  background-color: #0f5054;
+  color: #FFFFFF;
+}
+.qb:hover
+{
+  color: white;
+}
+
+.score-time{
+  margin: auto 5vw auto auto;
+}
+/* .glow{
+  border-color: #150126;
+  box-shadow: 0 0 12px #cd92f4;
+} */
+
+
+/* Language and Code file Buttons  */
+.drop-buttons{
+  display: grid;
+  grid-template-columns: 50% 50%; 
+  padding: 0px 20px; 
+}
+
+.choosefile .choosef{
+  width: 200px;  
+  margin-left: auto; 
+}
+
+#langbtn{
+  width: 200px; 
+  /* height: 35px;  */
+  font-family: 'Quicksand,sans-serif';  
+  font-size: 16px;
+  color: whitesmoke;  
+  
+}
+
+/* codeing section */
+
+.coding{
+  height: 80vh;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  /* margin: auto; */
+  justify-content:flex-start;
+  align-items: center;
+  padding:10px ;
+  row-gap: 30px;
+  margin-top: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: fixed;
+  display:flex;
+  width:1600px;
+
+}
+
+
+/* question section */
+.questionpart{
+  /* margin:0px auto; */
+  padding: 0px 8px;
+  display: grid;
+  grid-template-rows: auto;
+  height: 80vh; 
+  width: 640px;
+  padding-top: 0px;
+  margin-top: 50px;
+  font-size: small;
+}
+.question-sec
+{
+  overflow-x: hidden;
+  overflow-y: scroll; 
+  height: 70vh;
+  padding-right: 20px;
+  padding-left: 0px;
+  width: 750px;
+  height: 500;
+
+
+}
+/* .question-sec:hover{
+  /* background: rgba(255, 255, 255, 0.2);
+  filter:drop-shadow(); */
+/* } */ 
+/* code answer */
+.codingpart{
+  margin:0px auto; 
+  width: 550px;  
+  display: grid;  
+  grid-template-rows: 7% 88% 7%;  
+  overflow-x:hidden;
+  /* overflow-y: scroll;  */
+  margin-left: 180px; 
+  width: 800px;  
+  height: 550px;
+margin-bottom: 0px;
+ 
+}
+.code-section{
+  
+  margin-top: 3%;
+  display: grid;
+  padding-bottom: 10px;
+  padding-right: 20px;
+
+}
+.codehere
+{
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color:hwb(268 8% 62% / 0.97);
+  filter: brightness(75%);
+  border-radius: 10px;
+  overflow-x: auto;
+  overflow-y: scroll; 
+
+}
+.codehere textarea{
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+
+
+}
+#editor1{
+  margin-bottom: 20px;
+  height: 450px;
+  width: 100%;
+}
+
+
+
+/* End Buttons  */
+.console-btn{
+  width: 140px;
+  height:30px;
+
+
+
+}
+.submit-strip{
+  display: grid;
+
+  grid-template-columns:33% 33% 33% ;
+}
+.submit-btn{
+  padding: 0;
+  border-radius: 5px;
+}
+.run-btn,.console-btn
+{
+  border-radius: 5px;
+}
+.submit-btn button{
+  width: 100px;
+}
+.sub-btn button{
+  width: 100px;
+}
+#score,#time
+{
+  color: white;
+  font-size: 20px;
+}
+/* BUTTON HOVERING EFFECT */
+/* #score:hover,#time:hover{
+  background-color: rgb(137, 70, 188);
+} */
+.console-btn,.run-btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.console-btn,.run-btn {
+  border: 3px solid rgba(154, 86, 206, 0.911);;
+  color: rgb(255, 255, 255);
+}
+.console-btn:hover,.run-btn:hover {
+  background-color: blueviolet;
+  color: #fff;
+}
+.console-btn::after,.run-btn::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  color: black;
+}
+.console-btn:after{
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background:rgb(151, 47, 255);
+  color: black;
+}
+.run-btn:after{
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(151, 47, 255);
+  
+}
+.btn-info::after{
+  color: rgb(255, 255, 255);
+}
+.console-btn:hover:after, .console-btn:active:after,.run-btn:hover:after,.run-btn:active:after{
+  width: 100%;
+}
+#langbtn {
+  background-color:rgb(151, 47, 255)!important;
+}
+/*question section*/
+.que-name,.que-constrains
+{
+  color: rgb(253, 253, 253);
+  border-radius: 20px;
+ /* background-color: rgba(6, 100, 188, 0.454);*/
+  padding:10px 10px 10px 10px;
+  margin-bottom: 5px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  justify-content: left;
+  text-align: justify;
+}
+.que-description,.que-examples
+{
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  background-color:none;
+  padding:10px 10px 10px 10px;
+  margin-bottom: 5px;
+  /*background-color: rgba(0, 49, 95, 0.445);*/
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+  text-align:justify;
+}
+
+@media (min-width: 768px){
+  .navbar-nav {
+      float: right !important;
+      margin: 0;
+  }
+}
+
+/* Media query for Responsiveness */
+  @media(max-width:900px){
+      #score{
+          display: none;
+      }
+  }
+
+  @media(max-width:800px){
+        .head-strip{
+          display: flex;
+          flex-direction: column-reverse;
+          height: 15vh;
+          justify-content: center;
+          align-items: center;
+        }
+        .score-time{
+          margin: 10px auto;
+         
+        }
+  
+        .queno{
+          width: 20px;
+        }
+
+        .coding{
+          display:flex;
+          flex-direction: column;
+          height: auto;
+
+        }
+
+        .questionpart{
+          height: 75vh;
+          
+        }
+        
+        .codingpart{
+          margin-top: 8vh;
+          height: 80vh;
+
+        }
+      }
+/* BOX ANIMATIONS*/
+/*scroll Bar*/
+/* width */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(151, 47, 255);
+
+  border-radius: 10px;
+  
+}
+
+
+
+/* test cases starts here */
+
+.consoleBlocks{
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: auto;
+  height: 70%;
+  padding-top: 20px;
+
+
+}
+.navbar, footer {
+  background: rgb(14,0,36);
+  background: linear-gradient(104deg, rgba(14,0,36,1) 7%, rgba(26,12,45,1) 30%, rgba(61,21,163,1) 52%, rgba(13,5,25,1) 88%);
+
+  color: #ffffff;
+  font-family: 'Poppins',sans-serif;
+}
+
+
+/* .block1,.block2{
+  margin: 5px 10px;
+} */
+
+/* .block1 textarea{
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  background-color:rgba(255, 255, 255, 0.171) ;
+}
+.block2
+{
+  color: white;
+  font-family: "Quicksand,sans-serif";
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+
+}
+.block2 h5{
+  text-align: center;
+} */
+
+#test-cases h3
+{
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  
+}
+#test-cases{
+  overflow-y: auto;
+  padding: 0px 10px;
+}
+
+.Status{
+  margin: 55px 20px 20px 20px;
+  color: white;
+}
+
+.overallStatus{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgba(156, 86, 206, 0.911);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.test{
+  margin: 10px 0px;
+
+}
+.rc-input-output
+{
+display: flex;
+
+gap: 20px;
+  justify-items: center;
+  align-items: center;
+  font-family: 'Quicksand,sans-serif';
+  /* padding-left: 100px; */
+}
+.inputrc,.outputrc
+{
+ height: 70px;
+  font-size: 1.2rem;
+  color: whitesmoke;
+}
+.inputrc h3,.outputrc h3
+{    
+  font-size: 2rem;
+  text-align: center;
+}
+.get-output 
+{
+  
+  /* align-items:center; */
+  width:200px;
+  font-size: 1.4rem;
+  padding-top: 220px;
+  padding-left: 200px;
+  font-size: medium;
+}
+.get-output :hover{
+  background-color:rgb(151, 47, 255);
+}
+.get-output button{   
+  /* margin-left: 50px; */
+  margin-top: 40px;
+  width: 100px;
+
+  border-radius: 5px;
+  background: none;
+  color: white;
+  border-color: rgba(166, 86, 206, 0.911);
+}
+.inputrc textarea
+{
+  background: none;
+  border-radius: 5px;
+  background-color: none; 
+  border-width: 3px;
+  border-color: rgba(182, 86, 206, 0.911);
+  box-shadow: 0 0 10px rgb(113, 68, 127);  
+  color: white;
+  height: 230px;
+  width:290px;
+  overflow-x:auto;
+  overflow-y: scroll; 
+}
+
+.outputrc textarea{
+    background: none;
+  border-radius: 5px;
+  background-color: none; 
+  border-width: 3px;
+  border-color: rgba(162, 86, 206, 0.911);
+  box-shadow: 0 0 10px rgb(109, 68, 127);  
+  color: white;
+  height: 230px;
+  width:290px;
+  overflow-x:auto;
+  overflow-y: scroll; 
+}
+
+.outputrc h6, .inputrc h6 {
+  text-align: center;
+}
+.nav-item{
+  font-weight: bolder;
+}
+.navbar{
+  margin-bottom: 0px!important;
+  
+}
+.queimg{
+
+  height: 200px;
+  width: 300px;
+  padding: 4px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;;
+}
+.queimg img{
+  height: 100%;
+  width:100%;
+}
+
+/* codingpage.css */
+
+/* .console-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+} */
+
+.icon {
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+.mainconsole {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+}
+
+.consoleBlocks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.blockInsideconsoleblock{
+  color: white;
+}
+/* .block1 textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ccc;
+  padding: 5px;
+} */
+
+/* .block2 h5 {
+  margin: 0;
+} */
+
+.Status {
+  margin-top: 15px;
+}
+
+.overallStatus {
+  background-color: #ffc107;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.alltext {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.test {
+  display: flex;
+  align-items: center;
+  margin: 3px;
+}
+
+ion-icon {
+  margin-left: 5px;
+}
+
+.badadivcode{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.selector{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.submit-strip{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height:120px;
+}
+.css-tj5bde-Svg{
+  color: black;
+}

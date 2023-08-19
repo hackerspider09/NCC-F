@@ -1,0 +1,50 @@
+/* .footer {
+    color: #ffffff;
+    background: rgb(14,0,36);
+    background: linear-gradient(104deg, rgba(14,0,36,1) 7%, rgba(26,12,45,1) 30%, rgba(61,21,163,1) 52%, rgba(13,5,25,1) 88%);
+    z-index: 1;
+    position: relative;
+
+    left: 0;
+  bottom: 0;
+  } */
+
+  /* Reset margin and padding for all elements */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Flex container to ensure sticky footer layout */
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Main content area */
+  .container {
+    flex: 1;
+  }
+  
+  /* Sticky footer styles */
+.footer {
+  background: rgb(14, 0, 36);
+  background: linear-gradient(
+    104deg,
+    rgba(14, 0, 36, 1) 7%,
+    rgba(26, 12, 45, 1) 30%,
+    rgba(61, 21, 163, 1) 52%,
+    rgba(13, 5, 25, 1) 88%
+  );
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Make the footer span the entire width */
+}
+
+  
