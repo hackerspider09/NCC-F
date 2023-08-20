@@ -1,6 +1,7 @@
 import React from 'react';
 import './login.css';
 import { useState,useEffect } from "react";
+import {Navigate} from "react-router-dom";
 import { useNavigate } from "react-router";
 import axios from 'axios';
 import { AxiosInstance } from '../../Utils/AxiosConfig';
@@ -51,7 +52,10 @@ export default function Login() {
                     localStorage.setItem("token", response.data.token);
                     localStorage.setItem("isJunior", response.data.isJunior);
                     navigate("/instruction");
+                    window.location.reload(true);
                     toast.update(id, { render: "Logged in successfully !", type: "success", isLoading: false, autoClose:3000 })
+                    // <Navigate to="/instruction" />
+                    // window.location.reload(true);
                 
                 }
                 else {

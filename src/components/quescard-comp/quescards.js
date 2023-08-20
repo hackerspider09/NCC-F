@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
 import { BsCheck2Circle } from 'react-icons/bs';
-
+import {  toast } from 'react-toastify';
 
 const endPoint = "/api/questions/"
 
@@ -31,8 +31,9 @@ const [Qdata, setQdata] = useState(tasks);
                 }
             })
             .catch((error) => {
-                
+                toast.error(error.response.data.msg);
                 console.log("enter in error ",error);
+
 
             })
   },[]);

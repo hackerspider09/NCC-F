@@ -1,4 +1,6 @@
-import {BrowserRouter,Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+
+import {BrowserRouter,Route, Routes ,Navigate} from "react-router-dom";
 import Navbar from "./components/Nav-comp/Navbar";
 import './App.css';
 import Instruct from "./components/instruct-comp/instruct";
@@ -14,8 +16,30 @@ import QuestionHubPage from "./components/test_component/hello69";
 // import axios from "./components/axios";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {isTimeOver} from './Utils/utils';
 
 function App() {
+
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [accessExpired, setAccessExpired] = useState(false);
+
+  // Check local storage for login status on initial load
+  useEffect(() => {
+    const userIsLoggedIn = localStorage.getItem('isLogin') === 'true';
+    console.log("cecking ",userIsLoggedIn);
+
+    setLoggedIn(userIsLoggedIn);
+
+    setAccessExpired(isTimeOver());
+  }, []);
+  // }, [loggedIn,accessExpired]);
+
+
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    setLoggedIn(false);
+  };
+
 
   return (
     <BrowserRouter>
@@ -37,16 +61,17 @@ function App() {
         theme="dark"
       />
       <div>
+
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/instruction" element={<Instruct />} />
-          <Route path="/result" element={<Result />} />
-          <Route path="/question" element={<Quescards />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/" element={loggedIn  ? <Navigate to="/instruction" /> : <Login />} />
+          <Route path="/login" element={loggedIn  ? <Navigate to="/instruction" /> : <Login />} />
+          <Route path="/instruction" element={loggedIn && !accessExpired ? <Instruct /> : <Navigate to="/" />} />
+          <Route path="/result" element={ loggedIn && !accessExpired ? <Quescards /> : loggedIn ? <Result /> : <Navigate to="/" />} />
+          <Route path="/question" element={loggedIn && !accessExpired ? <Quescards /> : <Navigate to="/" />} />
+          <Route path="/leaderboard" element={loggedIn && !accessExpired ? <Leaderboard /> : <Navigate to="/" />} />
           {/* <Route path="/submission" element={<Submission/>} /> */}
           <Route path="/question/:questionId" element={<Codingpage/>} />
-          <Route path="/test" element={<QuestionHubPage/>} />
+          {/* <Route path="/test" element={<QuestionHubPage/>} /> */}
         </Routes>
     
       </div>

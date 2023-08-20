@@ -8,6 +8,7 @@ import {  toast } from 'react-toastify';
 
 export default function Consolecontent({ isSubmit, data,codeInput,changedData, onDataChange , onTextFieldChange}) {
   const [code, setCode] = useState({});
+  const [Verdict, setVerdict] = useState("");
   const [IsSubmitted, setIsSubmitted] = useState(false);
   const [sampleInput, setsampleInput] = useState(false);
   const [allAC, setallAC] = useState(false);
@@ -32,6 +33,7 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
       setIsSubmitted(true);
     }
     setsampleInput(codeInput)
+    // checkAllAC();
 
     
   }, [changedData]);
@@ -45,16 +47,27 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
       // Run your function here
       console.log("All statuses are AC");
       setallAC(true);
+      setVerdict("Passed");
+      
     }else{
-
-      console.log("All  are AC");
+      
+      setVerdict("Failed");
+      console.log("All  are faile");
     }
-    if (allAC) {
-      // Show a notification using react-toastify
-      toast.success("All test cases are AC and submitted!");
-    }
+    // if (allAC) {
+    //   // Show a notification using react-toastify
+    //   toast.success("All test cases are AC and submitted!");
+    // }
     
   };
+
+  const giveVer=()=>{
+    if (Verdict !== ""){
+      if (allAC){
+        return "Passed";
+      }return "Failed";
+    }
+  }
 
 
 
@@ -116,10 +129,11 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
       </div> 
 
     </div>
+    
         {IsSubmitted ? (
               <div className="Status">
-      <div className="overallStatus">
-        Answer is {allAC ? "Correct" :"Failed"}.
+                <div className="overallStatus">
+        {/* Answer is {allAC ? "Correct" :"Failed"}. */}  {Verdict}
       </div>
        <div className="alltext d-flex flex-wrap ">
 
@@ -134,6 +148,7 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
                   </div>
                 ))}
           </div> 
+
       </div>
             ) : (
               ""

@@ -28,3 +28,18 @@ bottom: 0;
 .nav-link:hover{
   color:#0d6efd;
 }
+
+.timer{
+  width: auto;
+
+}
+.timer>p{
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  font-weight:600;
+}
+
+.Btn-div{
+  display:flex;
+  padding-top: 30px;
+}

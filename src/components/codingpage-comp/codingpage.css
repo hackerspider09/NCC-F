@@ -3,7 +3,7 @@
     overflow-y:hidden;
 position:relative;
   /* height: 100vh; */
-  width: 1800px;
+  /* width: 1400px;; */
   background: rgb(6,4,32);
   /* background: linear-gradient(90deg  rgb(51, 8, 89) 28%, rgb(45, 9, 67) 48%, rgb(41, 8, 74) 81%, rgba(5,5,36,1) 91%); */
  position:relative;
@@ -15,6 +15,7 @@ position:relative;
     justify-content: center;
     align-items:center;
     padding-bottom: 55px;
+    margin: 0;
   
 }
 .testing{
@@ -120,7 +121,8 @@ color: #fff;
   overflow-x: hidden;
   position: fixed;
   display:flex;
-  width:1600px;
+  /* width:1600px;
+  margin-right: 200px; */
 
 }
 
@@ -134,8 +136,9 @@ color: #fff;
   height: 80vh; 
   width: 640px;
   padding-top: 0px;
-  margin-top: 50px;
+ 
   font-size: small;
+
 }
 .question-sec
 {
@@ -160,10 +163,10 @@ color: #fff;
   display: grid;  
   grid-template-rows: 7% 88% 7%;  
   overflow-x:hidden;
-  /* overflow-y: scroll;  */
+  overflow-y:hidden; 
   margin-left: 180px; 
-  width: 800px;  
-  height: 550px;
+  width: 720px;  
+  height: 450px;
 margin-bottom: 0px;
  
 }
@@ -213,7 +216,7 @@ margin-bottom: 0px;
 }
 .submit-strip{
   display: grid;
-
+ 
   grid-template-columns:33% 33% 33% ;
 }
 .submit-btn{
@@ -379,13 +382,13 @@ margin-bottom: 0px;
 /* width */
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
   
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
+  box-shadow: inset 0 0 5px transparent;
   border-radius: 10px;
 }
 
@@ -652,6 +655,7 @@ ion-icon {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 50px;
 }
 
 .submit-strip{
@@ -659,7 +663,8 @@ ion-icon {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height:120px;
+  height:70px;
+  margin-bottom:50px;
 }
 .css-tj5bde-Svg{
   color: black;

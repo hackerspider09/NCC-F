@@ -66,9 +66,11 @@ const btnstyle = {
                   id="submit_button"
                   name="submitbutton"
                   disabled={!isButtonEnabled} 
-                  onClick={() => localStorage.setItem("contractAccept", true)}
+                
+                  
                 >
-                  <Link to="/question/" style={btnstyle}> Proceed</Link>
+                  <Link to="/question/" style={btnstyle} onClick={() => 
+                    localStorage.setItem("contractAccept", true)}> Proceed</Link>
                   
                 </button>
               </div>

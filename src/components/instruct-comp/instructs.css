@@ -117,7 +117,7 @@ body {
     margin-bottom: 50px;
   }
   .button {
-    margin: 0px 0px 80px;
+    margin: 20px auto;
     vertical-align: middle;
     width: 150px;
     height: 40px;
@@ -125,6 +125,11 @@ body {
     color: #ffffff;
     transition: transform .2s;
     box-shadow: 20px 20px 30px rgb(0, 0, 0);
+
+    text-align: center;
+    
+    display:block;
+ 
   }
   .button:hover {
     background-color: #2f22ab;
@@ -146,8 +151,17 @@ body {
     color: #ffffff;
     transition: transform .2s;
     border-radius: 2px;
+    display:none;
     /* box-shadow: 20px 20px 30px rgb(0, 0, 0); */
   }
+/* 
+  #submit_button{
+    display: none;
+  }
+
+  #flexCheckDefault:checked ~ #submit_button{
+    display: flex;
+  } */
   
 
   

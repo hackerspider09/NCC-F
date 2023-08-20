@@ -1,18 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { AxiosInstance } from '../../Utils/AxiosConfig';
-// import { useHistory } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { redirect } from "react-router-dom";
+import {  toast } from 'react-toastify';
 
 const CountdownRedirect = () => {
+  const navigate = useNavigate();
+
 //   const targetTime = new Date('2023-08-29T19:51:49+05:30'); // Replace with your target time
+  const [IsOver, setIsOver] = useState(false);
   const [targetTime, settargetTime] = useState(0);
   const [remainingTime, setRemainingTime] = useState(getTimeDifference(targetTime));
 //   const history = useHistory();
 
 
-
+  const isTimeOver =()=>{
+    const countDown = new Date(targetTime).getTime();
+    const now = new Date().getTime();
+    // console.log(new Date())
+    var remain = countDown - now;
+    // console.log("timeisover ",remain); 
+    if (parseInt(remain) < 0){
+      setIsOver(true);
+      return true;
+    }
+    return false;
+  }
 
   useEffect(()=>{
+    // if (isOver())
     AxiosInstance.get("/api/gettime/")
             .then((response) => {
                 console.log("enter in then ");
@@ -24,6 +40,8 @@ const CountdownRedirect = () => {
                 // const seconds = dateTime.getUTCSeconds();
                 // const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 settargetTime(response.data[0].endTime);
+                
+                
             })
             .catch((error) => {
                 
@@ -38,16 +56,20 @@ const CountdownRedirect = () => {
       const now = new Date();
       const timeDifference = getTimeDifference(targetTime);
       const targettime = new Date(targetTime)
+      if (isTimeOver()){
+        // toast.error("Time Over"); 
+        navigate("/result");
+      }
 
-      // if (now > targetTime || now.getDate() !== getDate(targetTime.) ) {
-      //   // Redirect if the time has ended and the day is not the same
-      //   // history.push('/new-route'); // Replace with your desired route
-      //   console.log("dfsdf")
-      //   redirect("/leaderboard")
-      // } else {
-      //   console.log("Dfs")
-      //   setRemainingTime(timeDifference);
-      // }
+      if (now > targetTime && now.getDate() !== targetTime.getDate()) {
+        // Redirect if the time has ended and the day is not the same
+        // history.push('/new-route'); // Replace with your desired route
+        console.log("dfsdf")
+        redirect("/leaderboard")
+      } else {
+        console.log("Dfs")
+        setRemainingTime(timeDifference);
+      }
     }, 1000);
 
     return () => {
@@ -72,9 +94,8 @@ const getTimeDifference = (targetTime) => {
     let remain = countDown - now;
     // console.log(remain);
     if (remain < 0) {
-        redirect("/leaderboard");
+        return `00 : 00 : 00`;
     }
-    return `00 : 00 : 00`;
 
 
     let seconds = Math.floor((remain / 1000) % 60);

@@ -2,7 +2,8 @@ import {React,useState,useEffect} from 'react'
 import './Navbar.css'
 import revb from './revb.svg'
 import Instruct from "../instruct-comp/instruct";
-import { NavLink } from "react-router-dom";
+import { NavLink,Navigate,redirect,useNavigate} from "react-router-dom";
+// import Redirect  from 'react-redirect';
 import Codingpage from "../codingpage-comp/codingpage";
 import Submission from "../submission-comp/submission";
 import Leaderboard from "../leaderb-comp/leaderboard";
@@ -14,12 +15,22 @@ import { AxiosInstance } from '../../Utils/AxiosConfig';
 // import QuestionHubPage from "./components/test_component/hello69";
 import CountdownRedirect from "./timer"
 export default function Navbar() {
-
+  const nav = useNavigate();
 
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState('coding'); // Default to coding page
 
   
+  const [loggedIn, setLoggedIn] = useState(false);
+
+
+  // Check local storage for login status on initial load
+  useEffect(() => {
+    const userIsLoggedIn = localStorage.getItem('isLogin') === 'true';
+
+    setLoggedIn(userIsLoggedIn);
+  }, []);
+
 
   
 
@@ -45,6 +56,20 @@ export default function Navbar() {
   });
 
 
+  const handleLogout = () => {
+    localStorage.clear();
+    setLoggedIn(false);
+    // <Navigate to = "/" />
+    // Redirect("/")
+    // Redirect("/login");
+    nav("/");
+    window.location.reload(true);
+  };
+
+
+
+
+
   return (
     <>
    
@@ -63,41 +88,16 @@ export default function Navbar() {
         ><img src={revb} alt="Clash Logo" className='logo'
       /></a>
 
-    <div>
-    <ul className="navbar-nav ms-auto">
-      {currentPage ==='coding'&&(
+    <div class="Btn-div">
 
-     <>
-          <Link to="/question" className='nav-link'>QuestionHub</Link>
-          <Link to="/leaderboard" className='nav-link'>Leaderboard</Link>
-     </>
-                
+          {loggedIn && localStorage.getItem("contractAccept") ?  < CountdownRedirect /> :" "} 
+      
 
-
-      )}
-            
-            {currentPage === 'questionhub' && (
-        <>
-          {/* <Link to="/questionhubpage">QuestionHub</Link> */}
-          <Link to="/leaderboard"   className='nav-link'>Leaderboard</Link>
-        </>
-      )}
-            
-            {currentPage === 'leaderboard' && (
-        <>
-          {/* <Link to="/codingpage">QuestionHub</Link> */}
-          <Link to="/question"  className='nav-link' >QuestionHub</Link>
-        </>
-      )} 
-              
-    
-           
-            </ul>
+            <ul> { loggedIn && localStorage.getItem("contractAccept") ? <Link to="/question"  className='nav-link' >QuestionHub</Link> : "" } </ul>
+            <ul> { loggedIn ? <Link to="/leaderboard"  className='nav-link' >Leaderboard</Link> : "" } </ul>
+            <ul> {loggedIn && (<button onClick={handleLogout} className = "btn btn-primary">Log Out</button>)} </ul>
     </div>
      
-    <div className="timer">
-         <CountdownRedirect />
-      </div>
 
      
     </div>
