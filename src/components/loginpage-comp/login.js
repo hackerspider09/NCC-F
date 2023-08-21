@@ -130,104 +130,17 @@ return (
 
 </form>
 
-
-    {/* <div className="login-div">
-    <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={submitLoginForm}>
-
-        <div class="control block-cube block-input">
-        <input name="username" type="text" placeholder="Username" required="true" onChange={handleChange}  />
-         <div class="bg-top">
-         <div class="bg-inner"></div>
-         </div>
-          <div class="bg-right">
-          <div class="bg-inner"></div>
-         </div>
-         <div class="bg">
-         <div class="bg-inner"></div>
-         </div>
-         </div>
-        
-         <div class="control block-cube block-input">
-          <input name="password" type="password" placeholder="Password" required="true" onChange={handleChange}/>
-          <div class="bg-top">
-          <div class="bg-inner"></div>
-           </div>
-         <div class="bg-right">
-         <div class="bg-inner"></div>
-         </div>
-        <div class="bg">
-         <div class="bg-inner"></div>
-        </div>
-        </div>
-
-
-
-            {/* <div className="user-box">
-                <input type="text" name="username" required="true" onChange={handleChange} />
-                <label>Username</label>
-            </div> */}
-            {/* <div className="user-box">
-                <input type="password" name="password" required="true" onChange={handleChange} />
-                <label>Password</label>
-            </div> */}
-
-
-
-
-{/* <button class="btn block-cube block-cube-hover" type="submit">
-    <div class="bg-top">
-      <div class="bg-inner"></div>
-    </div>
-    <div class="bg-right">
-      <div class="bg-inner"></div>
-    </div>
-    <div class="bg">
-      <div class="bg-inner"></div>
-    </div>
-    <div class="text">Log In</div>
-  </button> */}
-
-            {/* <button className="login-btn" type='submit' >
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Login
-            </button> */}
-        {/* </form> */}
-    {/* </div>
-    </div> */}
-    {/* <div className="clear"></div> */} 
-    </>
+</>
+    
     )
 }
 
 
 
 
-// const [isError, setIsError] = useState("");
 
 
 
-
-// const loginEndpoint = "/api/login/";
-
-// useEffect(() =>{
-//     try{
-//         axios
-//         .get(loginEndpoint)
-//         .then((res) =>{
-//          if(res.data.success){
-//            setLogincred(res.data);
-//            localStorage.setItem("token", res.data.token);
-//         }
-//        })
-//     } catch(error){
-//         setIsError(error.message);
-//     }
 
 
     
-// },[]);

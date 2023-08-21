@@ -130,7 +130,7 @@ html {
     /* background: rgba(17, 159, 247, 0.849);
     animation: btn-anim2 1s linear infinite;
     animation-delay: 0.25s; */
-  /* } */ */
+  /* } */ 
   
   /* @keyframes btn-anim2 {
     0% {
@@ -182,8 +182,7 @@ html {
     100% {
       bottom: 100%;
     } */
-   */
-   */
+  
   .im-buttons {
     display: flex;
     justify-content: space-around;

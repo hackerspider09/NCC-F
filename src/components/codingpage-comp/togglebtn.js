@@ -25,7 +25,7 @@ const QuestionDetailSection = (props) => {
       ))} */}
         <div className="que-name">
           
-          <h2> {HtmlReactParser(String(props.QuesData.title))} </h2>
+          <h2> {props.QuesData.title} </h2>
           
         </div>
         <div className="quepart que-description" Style="height: auto;">
