@@ -77,18 +77,36 @@ export default function Login() {
         
 return (
     <>
-    <div className="login-div">
-    <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={submitLoginForm}>
-            <div className="user-box">
-                <input type="text" name="username" required="true" onChange={handleChange} />
-                <label>Username</label>
-            </div>
-            <div className="user-box">
-                <input type="password" name="password" required="true" onChange={handleChange} />
-                <label>Password</label>
-            </div>
+
+
+<form class="form" autocomplete="off"  onSubmit={submitLoginForm} >
+  <div class="control">
+    <h1>Sign In</h1>
+  </div>
+  <div class="control block-cube block-input">
+    <input name="username" type="text" placeholder="Username"  required="true" onChange={handleChange} />
+    <div class="bg-top">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg-right">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg">
+      <div class="bg-inner"></div>
+    </div>
+  </div>
+  <div class="control block-cube block-input">
+    <input name="password" type="password" placeholder="Password"  required="true" onChange={handleChange} />
+    <div class="bg-top">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg-right">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg">
+      <div class="bg-inner"></div>
+    </div>
+  </div>
 
 
             <div className="im-buttons">
@@ -96,17 +114,92 @@ return (
                     <input name="im-buttons" type="radio" id="a-button" checked="checked" />
                     <span>Junior</span></label><label className="radio" id="b-button"><input name="im-buttons"
                         type="radio" id="b-button" /><span>Senior</span></label></div>
-            <button className="login-btn" type='submit' >
+
+  <button class="btn block-cube block-cube-hover" type="submit">
+    <div class="bg-top">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg-right">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="text">Log In</div>
+  </button>
+
+</form>
+
+
+    {/* <div className="login-div">
+    <div className="login-box">
+        <h2>Login</h2>
+        <form onSubmit={submitLoginForm}>
+
+        <div class="control block-cube block-input">
+        <input name="username" type="text" placeholder="Username" required="true" onChange={handleChange}  />
+         <div class="bg-top">
+         <div class="bg-inner"></div>
+         </div>
+          <div class="bg-right">
+          <div class="bg-inner"></div>
+         </div>
+         <div class="bg">
+         <div class="bg-inner"></div>
+         </div>
+         </div>
+        
+         <div class="control block-cube block-input">
+          <input name="password" type="password" placeholder="Password" required="true" onChange={handleChange}/>
+          <div class="bg-top">
+          <div class="bg-inner"></div>
+           </div>
+         <div class="bg-right">
+         <div class="bg-inner"></div>
+         </div>
+        <div class="bg">
+         <div class="bg-inner"></div>
+        </div>
+        </div>
+
+
+
+            {/* <div className="user-box">
+                <input type="text" name="username" required="true" onChange={handleChange} />
+                <label>Username</label>
+            </div> */}
+            {/* <div className="user-box">
+                <input type="password" name="password" required="true" onChange={handleChange} />
+                <label>Password</label>
+            </div> */}
+
+
+
+
+{/* <button class="btn block-cube block-cube-hover" type="submit">
+    <div class="bg-top">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg-right">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="text">Log In</div>
+  </button> */}
+
+            {/* <button className="login-btn" type='submit' >
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 Login
-            </button>
-        </form>
-    </div>
-    </div>
-    <div className="clear"></div>
+            </button> */}
+        {/* </form> */}
+    {/* </div>
+    </div> */}
+    {/* <div className="clear"></div> */} 
     </>
     )
 }

@@ -18,7 +18,7 @@ const CodeEditorWindow = ({ onChange, language, code, theme }) => {
     onChange("code", value);
 
     // Save content to local storage
-    localStorage.setItem("editorContent", value);
+    localStorage.setItem("editorContent", value,)
   };
 
   return (

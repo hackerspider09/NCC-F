@@ -12,7 +12,7 @@ html {
     background: #022527;
     color: #ffffff;
   } */
-  
+/*   
 .login-div{
   width : 100%
 }
@@ -24,13 +24,13 @@ html {
     padding: 40px;
     /* rc */
     /* background-image: linear-gradient(201deg, #05494d -23%, #12100e 130%); */
-    background: linear-gradient(0deg,  rgba(26,12,45,1) 50%, rgba(61,21,163,1) 102% );
+    /* background: linear-gradient(0deg,  rgba(26,12,45,1) 50%, rgba(61,21,163,1) 102% );
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    margin-top: 25px;
-  }
-  
+    margin-top: 25px; */
+  /* }  */
+/*   
   .login-box h2 {
     margin: 0 0 30px;
     padding: 0;
@@ -91,12 +91,12 @@ html {
   
   .login-btn:hover {
     /* background: #0cd69c84; */
-    background: rgba(17, 159, 247, 0.849);
+    /* background: rgba(17, 159, 247, 0.849);
     color: #fff;
-    border-radius: 5px;
-  }
+    border-radius: 5px; */
+  /* } */
   
-  .login-btn span {
+  /* .login-btn span {
     position: absolute;
     display: block;
   }
@@ -107,10 +107,10 @@ html {
     width: 100%;
     height: 2px;
     /* background: linear-gradient(90deg, transparent, rgba(122, 206, 86, 0.911)); */
-    background: rgba(17, 159, 247, 0.849);
-    animation: btn-anim1 1s linear infinite;
-  }
-  
+    /* background: rgba(17, 159, 247, 0.849);
+    animation: btn-anim1 1s linear infinite; */
+  /* } */
+/*   
   @keyframes btn-anim1 {
     0% {
       left: -100%;
@@ -119,20 +119,20 @@ html {
     100% {
       left: 100%;
     }
-  }
+  }  */
   
-  .login-btn span:nth-child(2) {
+  /* .login-btn span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
     height: 100%;
     /* background: linear-gradient(180deg, transparent, rgba(122, 206, 86, 0.911)); */
-    background: rgba(17, 159, 247, 0.849);
+    /* background: rgba(17, 159, 247, 0.849);
     animation: btn-anim2 1s linear infinite;
-    animation-delay: 0.25s;
-  }
+    animation-delay: 0.25s; */
+  /* } */ */
   
-  @keyframes btn-anim2 {
+  /* @keyframes btn-anim2 {
     0% {
       top: -100%;
     }
@@ -141,19 +141,19 @@ html {
       top: 100%;
     }
   }
-  
-  .login-btn span:nth-child(3) {
+/*    */
+  /* .login-btn span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
     height: 2px;
     /* background: linear-gradient(270deg, transparent, rgba(122, 206, 86, 0.911)); */
-    background: rgba(17, 159, 247, 0.849);
+    /* background: rgba(17, 159, 247, 0.849);
     animation: btn-anim3 1s linear infinite;
-    animation-delay: 0.5s;
-  }
+    animation-delay: 0.5s; */
+  /* }  */
   
-  @keyframes btn-anim3 {
+  /* @keyframes btn-anim3 {
     0% {
       right: -100%;
     }
@@ -161,29 +161,29 @@ html {
     100% {
       right: 100%;
     }
-  }
-  
+  } */
+/*   
   .login-btn span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
     height: 100%;
     /* background: linear-gradient(360deg, transparent, rgba(122, 206, 86, 0.911)); */
-    background: rgba(17, 159, 247, 0.849);
+    /* background: rgba(17, 159, 247, 0.849);
     animation: btn-anim4 1s linear infinite;
-    animation-delay: 0.75s;
-  }
+    animation-delay: 0.75s; */
+  /* } */
   
-  @keyframes btn-anim4 {
+  /* @keyframes btn-anim4 {
     0% {
       bottom: -100%;
     }
     50%,
     100% {
       bottom: 100%;
-    }
-  }
-  
+    } */
+   */
+   */
   .im-buttons {
     display: flex;
     justify-content: space-around;
@@ -289,3 +289,192 @@ html {
   .radio:hover input:checked + span:after {
     transform: scale(0.4);
   }
+
+  *,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --bg_body: #212121;
+  --bg_gradient_last_color: rgba(0, 212, 255, 1);
+  --bg_gradient: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(52, 9, 121, 1) 37%,
+    var(--bg_gradient_last_color) 94%
+  );
+}
+
+body {
+  background-color: var(--bg_body);
+  /* color: #fff; */
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: 23px;
+}
+
+.form {
+  width: 300px;
+  padding: 64px 15px 24px;
+  margin: 0 auto;
+}
+
+.form .control {
+  margin: 0 0 24px;
+}
+
+.form .control input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+}
+
+.form .control input:hover,
+.form .control input:focus {
+  outline: none;
+  border: 0;
+}
+
+.form .btn {
+  width: 100%;
+  display: block;
+  padding: 14px 16px;
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.block-cube {
+  position: relative;
+}
+
+.block-cube .bg-top,
+.block-cube .bg-right,
+.block-cube .bg {
+  position: absolute;
+}
+
+.block-cube .bg-top {
+  height: 10px;
+  background: rgb(2, 0, 36);
+  background: var(--bg_gradient);
+  bottom: 100%;
+  left: 5px;
+  right: -5px;
+  transform: skew(-45deg, 0);
+  margin: 0;
+}
+
+.block-cube .bg-top .bg-inner {
+  bottom: 0;
+}
+
+.block-cube .bg {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(2, 0, 36);
+  background: var(--bg_gradient);
+}
+
+.block-cube .bg-right {
+  background: rgb(2, 0, 36);
+  background: rgba(0, 212, 255, 1);
+  top: -5px;
+  z-index: 0;
+  bottom: 5px;
+  width: 10px;
+  left: 100%;
+  transform: skew(0, -45deg);
+}
+
+.block-cube .bg-right .bg-inner {
+  left: 0;
+}
+
+.block-cube .bg-inner {
+  background: var(--bg_body);
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.block-cube .text {
+  position: relative;
+  z-index: 2;
+}
+
+.block-cube.block-input input {
+  position: relative;
+  z-index: 2;
+}
+
+.block-cube.block-input input:focus ~ .bg-right .bg-inner,
+.block-cube.block-input input:focus ~ .bg-top .bg-inner,
+.block-cube.block-input input:focus ~ .bg-inner .bg-inner {
+  top: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.block-cube.block-input .bg-top,
+.block-cube.block-input .bg-right,
+.block-cube.block-input .bg {
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.2s ease-in-out;
+}
+
+.block-cube.block-input .bg-right .bg-inner,
+.block-cube.block-input .bg-top .bg-inner {
+  transition: all 0.2s ease-in-out;
+}
+
+.block-cube.block-input:focus .bg-top,
+.block-cube.block-input:focus .bg-right,
+.block-cube.block-input:hover .bg-top,
+.block-cube.block-input:hover .bg-right,
+.block-cube.block-input:focus .bg,
+.block-cube.block-input:hover .bg {
+  /* background: rgba(255, 255, 255, 0.8); */
+}
+
+.block-cube-hover:focus .bg .bg-inner,
+.block-cube-hover:hover .bg .bg-inner {
+  top: 100%;
+}
+
+.credits {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 15px 15px;
+  width: 100%;
+  z-index: 111;
+}
+
+
+.credits a:hover {
+  opacity: 1;
+}
+
+
+
