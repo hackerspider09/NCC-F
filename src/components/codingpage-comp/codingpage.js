@@ -10,8 +10,10 @@ import ThemeDropdown from "./ThemesDropdown";
 import LanguagesDropdown from "./LanguagesDropdown"; 
 import { defineTheme } from "../../lib/defineTheme";
 import Consolecontent from './consolecontent';
-const subendPoint = "/api/submit/";
+import parse from 'html-react-parser'
+import "./tinymce.css"
 
+const subendPoint = "/api/submit/";
 
 
 
@@ -243,7 +245,7 @@ export default function Codingpage() {
                                 
                             //     className=""
                             // >
-                                <Consolecontent onClick={toggleModal} data={ExecutedData} isSubmit={isSubmit} codeInput={sampleInput} onDataChange={handleDataChange} changedData={ExecutedData}  onTextFieldChange={handleTextFieldChange}/>
+                                <Consolecontent onClick={toggleModal} data={ExecutedData} isSubmit={isSubmit} codeInput={parse(String(sampleInput))} onDataChange={handleDataChange} changedData={ExecutedData}  onTextFieldChange={handleTextFieldChange}/>
                             //</div>
                         )}
       

@@ -81,7 +81,7 @@ return (
 
 <form class="form" autocomplete="off"  onSubmit={submitLoginForm} >
   <div class="control">
-    <h1>Sign In</h1>
+    <h1>Login </h1>
   </div>
   <div class="control block-cube block-input">
     <input name="username" type="text" placeholder="Username"  required="true" onChange={handleChange} />

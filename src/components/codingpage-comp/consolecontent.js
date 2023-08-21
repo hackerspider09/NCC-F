@@ -1,5 +1,7 @@
 import React ,{useState,useEffect } from 'react'
 import './consolecontent.css';
+import "./tinymce.css"
+import parse from 'html-react-parser'
 import TextField from '@mui/material/TextField';
 import { BsCheck2Circle } from 'react-icons/bs';
 import { RxCrossCircled } from 'react-icons/rx';
