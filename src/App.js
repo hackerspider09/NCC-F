@@ -22,13 +22,16 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [accessExpired, setAccessExpired] = useState(false);
+  const [IsAccepted, setIsAccepted] = useState(false);
 
   // Check local storage for login status on initial load
   useEffect(() => {
     const userIsLoggedIn = localStorage.getItem('isLogin') === 'true';
+    const contractAccept = localStorage.getItem('contractAccept') === 'true';
     console.log("cecking ",userIsLoggedIn);
 
     setLoggedIn(userIsLoggedIn);
+    setIsAccepted(contractAccept);
 
     setAccessExpired(isTimeOver());
   }, []);
@@ -65,8 +68,8 @@ function App() {
         <Routes>
           <Route path="/" element={loggedIn  ? <Navigate to="/instruction" /> : <Login />} />
           <Route path="/login" element={loggedIn  ? <Navigate to="/instruction" /> : <Login />} />
-          <Route path="/instruction" element={loggedIn && !accessExpired ? <Instruct /> : <Navigate to="/" />} />
-          <Route path="/result" element={ loggedIn && !accessExpired ? <Quescards /> : loggedIn ? <Result /> : <Navigate to="/" />} />
+          <Route path="/instruction" element={loggedIn && !accessExpired && !IsAccepted ?  <Instruct />  : loggedIn && IsAccepted ? <Quescards /> : <Navigate to="/" />} />
+          <Route path="/result" element={ loggedIn && accessExpired ? <Quescards /> : loggedIn ? <Result /> : <Navigate to="/" />} />
           <Route path="/question" element={loggedIn && !accessExpired ? <Quescards /> : <Navigate to="/" />} />
           <Route path="/leaderboard" element={loggedIn && !accessExpired ? <Leaderboard /> : <Navigate to="/" />} />
           {/* <Route path="/submission" element={<Submission/>} /> */}

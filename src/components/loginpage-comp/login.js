@@ -77,6 +77,7 @@ export default function Login() {
         
 return (
     <>
+    <div className="login-div">
     <div className="login-box">
         <h2>Login</h2>
         <form onSubmit={submitLoginForm}>
@@ -103,6 +104,7 @@ return (
                 Login
             </button>
         </form>
+    </div>
     </div>
     <div className="clear"></div>
     </>

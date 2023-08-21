@@ -77,10 +77,11 @@ footer {
     text-align: center;
     justify-content: center;
     color: rgb(255, 255, 255);
-    padding-top: 50px;
+    padding-top: 20px;
     /* padding-bottom: 50px; */
     font-size:32px;
     text-shadow: 6px 6px 8px rgba(16, 16, 16, 0.6);
+    
 }
     
 
@@ -111,7 +112,7 @@ footer {
 
 .question-table .card{
     text-align: center;
-    margin: auto 70px;
+    margin: 0px;
     /* border: 1px solid black;  */
     width: 250px;
     border: 1px solid rgba(255, 255, 255, 0.3);

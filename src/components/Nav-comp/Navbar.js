@@ -43,17 +43,17 @@ export default function Navbar() {
  
 
   // Update the currentPage state based on the current pathname
-  useEffect(() => {
-    const pathname = location.pathname;
-    if (pathname === '/question/c296c' || pathname === '/question/c65e6'|| pathname === '/question/f3143'|| pathname === '/question/d6b92'|| pathname === '/question/97ae4'
-    || pathname === '/question/791f3'|| pathname === '/question/5f49d'|| pathname === '/question/3429c') {
-      setCurrentPage('coding');
-    } else if (pathname === '/question') {
-      setCurrentPage('questionhub');
-    } else if (pathname === '/leaderboard') {
-      setCurrentPage('leaderboard');
-    }
-  });
+  // useEffect(() => {
+  //   const pathname = location.pathname;
+  //   if (pathname === '/question/c296c' || pathname === '/question/c65e6'|| pathname === '/question/f3143'|| pathname === '/question/d6b92'|| pathname === '/question/97ae4'
+  //   || pathname === '/question/791f3'|| pathname === '/question/5f49d'|| pathname === '/question/3429c') {
+  //     setCurrentPage('coding');
+  //   } else if (pathname === '/question') {
+  //     setCurrentPage('questionhub');
+  //   } else if (pathname === '/leaderboard') {
+  //     setCurrentPage('leaderboard');
+  //   }
+  // });
 
 
   const handleLogout = () => {
@@ -75,18 +75,27 @@ export default function Navbar() {
    
     <nav className="navbar navbar-expand-lg navbarr">
     <div className="container-fluid">
-
-    <a
-        className="navbar-brand navvi pisblogo"
-        href="https://pictieee.in"
-       
-        style={{padding: 0, marginLeft : 20}}
-        ><img src="images/pisblogo.png" alt="PISBLogo" height="30px"
-      /></a>
+    
+        {/* <a
+            className="navbar-brand navvi pisblogo"
+            href="https://ctd.credenz.in"
+          
+            style={{padding: 0, marginLeft : 20}}
+            ><img src="https://i.postimg.cc/yNMmy6CD/ctdlogo.png" alt="PISBLogo" height="30px"
+            // ><img src="images/pisblogo.png" alt="PISBLogo" height="30px"
+          /></a> */}
+      <div>
+        <a
+            className="navbar-brand navvi pisblogo"
+            href="https://ctd.credenz.in"
+          
+            style={{padding: 0, marginLeft : 20}}
+            ><img src="https://i.postimg.cc/HsPn6YrQ/NCC-2.png" alt="PISBLogo" className='img-style'  /></a>
+    </div>
+   
+    
       
-      <a className="navbar-brand navvi" href="https://credenz.in" style={{padding: 0}}
-        ><img src={revb} alt="Clash Logo" className='logo'
-      /></a>
+      
 
     <div class="Btn-div">
 
@@ -98,8 +107,9 @@ export default function Navbar() {
             <ul> {loggedIn && (<button onClick={handleLogout} className = "btn btn-primary">Log Out</button>)} </ul>
     </div>
      
-
-     
+        
+      
+    
     </div>
   </nav>
 

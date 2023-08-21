@@ -155,10 +155,10 @@ export default function Codingpage() {
     }
   }
   useEffect(() => {
-    defineTheme("oceanic-next").then((_) =>
-      setTheme({ value: "oceanic-next", label: "Oceanic Next" })
+    defineTheme("tomorrow-night-blue").then((_) =>
+      setTheme({ value: "tomorrow-night-blue", label: "tomorrow-night-blue" })
     );
-  }, []);
+  },[]);
 
   const onSelectChange = (sl) => {
     console.log("selected Option...", sl);
