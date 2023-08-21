@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Submission from "../submission-comp/submission"
 import "./tinymce.css"
-import HtmlParser from 'html-react-parser'
+import HtmlReactParser from 'html-react-parser'
 const QuestionHubPage = (props) => {
   const [viewType, setViewType] = useState('question'); // Default to showing questions
 
@@ -25,30 +25,30 @@ const QuestionDetailSection = (props) => {
       ))} */}
         <div className="que-name">
           
-          <h2> {HtmlParser(String(props.QuesData.title))} </h2>
+          <h2> {HtmlReactParser(String(props.QuesData.title))} </h2>
           
         </div>
         <div className="quepart que-description" Style="height: auto;">
           {/* <h4>Description</h4> */}
-          {HtmlParser(String(props.QuesData.description))}
+          {HtmlReactParser(String(props.QuesData.description))}
           
           <h4>Input Format</h4>
-           {HtmlParser(String(props.QuesData.ipFormate))}
+           {HtmlReactParser(String(props.QuesData.ipFormate))}
 
 
        <h4>Output Format</h4>{"\n"}
-       {HtmlParser(String(props.QuesData.sampleOp))}
+       {HtmlReactParser(String(props.QuesData.sampleOp))}
 
 
        <h4>Sample Input</h4>{"\n"}
-       {HtmlParser(String(props.QuesData.sampleIp))}
+       {HtmlReactParser(String(props.QuesData.sampleIp))}
        <h4>Sample Output</h4>{"\n"}
-       {HtmlParser(String(props.QuesData.sampleOp))}
+       {HtmlReactParser(String(props.QuesData.sampleOp))}
           
          
         
           <h3>Question Constraints</h3>{"\n"}
-          {HtmlParser(String(props.QuesData.constraints))}
+          {HtmlReactParser(String(props.QuesData.constraints))}
          
 
           <h3>Author</h3>{"\n"}
