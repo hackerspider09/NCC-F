@@ -135,7 +135,7 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
         {IsSubmitted ? (
               <div className="Status">
                 <div className="overallStatus">
-        {/* Answer is {allAC ? "Correct" :"Failed"}. */}  {Verdict}
+        {/* Answer is {allAC ? "Correct" :"Failed"}.  {Verdict} */}
       </div>
        <div className="alltext d-flex flex-wrap ">
 

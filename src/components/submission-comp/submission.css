@@ -273,11 +273,12 @@ border-radius: 5px;
     color: #000;
     background-color: #413c37;
     width: 900px;
+    height:900px;
   margin-top: 200px;
   margin-left: 200px;
   align-items: center;
  }
  .closebtn{
-    color: #000;
+    color: #c92323;
     margin-left: 450px;
  }

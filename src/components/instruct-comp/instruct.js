@@ -24,15 +24,15 @@ const btnstyle = {
 
 
   return (
-    <div className="container">
-      <div className="row align">
+    
+      <div className="row align">  
         <div className="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
-        <div className="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+        <div className="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">  
           <div className="heading instr">
             <h3 className="title">INSTRUCTIONS</h3>
           </div>
-          <div className="scrollon" id="style-8">
-            {instructions.map((instruction, index) => (
+          <div className="scrollon" id="style-8">  
+            {instructions.map((instruction, index) => (  
               <div className="outerbox" key={index}>
                 <div className="infobox">{instruction}</div>
                 <div className={`numbox ${index + 1}`}>{String(index + 1).padStart(2, '0')}</div>
@@ -79,7 +79,7 @@ const btnstyle = {
         </div>
         <div className="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
       </div>
-    </div>
+    
   );
 }
 

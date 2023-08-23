@@ -315,13 +315,14 @@ body {
 }
 
 h1 {
-  font-size: 23px;
+  font-size: 2.1rem;
 }
 
 .form {
-  width: 300px;
+  width: 400px;
+  height: webkit-fill-available;
   padding: 64px 15px 24px;
-  margin: 0 auto;
+  margin: 7% auto;
 }
 
 .form .control {

@@ -11,6 +11,8 @@ const endPoint = "/api/result/"
 const Result = () => {
   const [Resultdata,setResultData] = useState();
   const [top6,setTop6] = useState([]);  
+  const [total,setTotal] = useState(0);
+  const [right,setRight] = useState(0);
 
   
 
@@ -21,7 +23,7 @@ const Result = () => {
                 console.log("enter in then ");
                 if (response.status) {
                     console.log("enter in then if ");
-                    // console.log(response.data);
+                    console.log(response.data);
                     var personalR = response.data.personalRank;
                     var top6R = response.data.top6;
                     setResultData(Resultdata => ({
@@ -32,6 +34,10 @@ const Result = () => {
                       ...top6,
                       ...top6R
                     }));
+                    setTotal(response.data.totalSub);
+                    setRight(response.data.rightSub);
+                    console.log(response.data.totalSub)
+                    console.log(response.data.rightSub)
                     
 
 
@@ -68,9 +74,6 @@ const Result = () => {
         <h1 className="resulttitle">Your Results</h1>
           <div className="user_profile">
               <div className="profile">
-                <div className="profilepic">
-                  A
-                </div>
                 <p className="name">{Resultdata?.user1}</p>
               </div>
 
@@ -100,21 +103,19 @@ const Result = () => {
                 <table className="tbles">
                   <thead>
                     <th>
-                      Questions 
-                      Attempted
+                      Total Submissions
                     </th>
                     <th>
-                      Questions 
-                      Asked
+                      Accuracy
                     </th>
                   </thead>
                   <tbody>
                     <tr>
                       <td>
-                        7
+                        {total}
                       </td>
                       <td>
-                        7
+                        {((right/total)*100).toFixed(2)}%
                       </td>
                     </tr>
                   </tbody>

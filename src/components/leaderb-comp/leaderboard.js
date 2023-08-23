@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'datatables.net-dt/css/jquery.dataTables.min.css';
-import DataTable from "react-data-table-component";
+import DataTable from "react-data-table-component";  
 import "./leaderboard.css";
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
@@ -80,7 +80,7 @@ const Leaderboard = () => {
       const dateTime = new Date(row.lastUpdate);
       const hours = dateTime.getUTCHours();
       const minutes = dateTime.getUTCMinutes();
-      const seconds = dateTime.getUTCSeconds();
+      const seconds = dateTime.getUTCSeconds();  
       const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
       return timeString;
     },},
@@ -88,7 +88,9 @@ const Leaderboard = () => {
   ];
 
   return (
-    <div className="container">
+    <>
+    <body>
+    
       <div className="row">
         <h1 className="mt-4 mb-3">Leaderboard</h1>
         <div className="searchFunc">
@@ -114,7 +116,10 @@ const Leaderboard = () => {
           />
         </div>
       </div>
-    </div>
+    
+    </body>
+    </>
+
   );
 };
 

@@ -64,8 +64,9 @@ export default function Login() {
                 }
             })
             .catch((error) => {
-                toast.update(id, { render: "User Not Found", type: "error", isLoading: false, autoClose:3000 })
-                console.log("enter in error ",error.response);
+              toast.update(id, { render: error.response.data.msg, type: "error", isLoading: false, autoClose:3000 })
+              console.clear();
+                console.log("enter in error +",error.response);
             
                 setLogincred(Logincred)
             })

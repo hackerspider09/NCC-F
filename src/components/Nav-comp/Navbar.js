@@ -97,7 +97,7 @@ export default function Navbar() {
       
       
 
-    <div class="Btn-div">
+    <div className="Btn-div">
 
           {loggedIn && localStorage.getItem("contractAccept") ?  < CountdownRedirect /> :" "} 
       

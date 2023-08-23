@@ -4,9 +4,12 @@ import "./tinymce.css"
 import HtmlReactParser from 'html-react-parser'
 const QuestionHubPage = (props) => {
   const [viewType, setViewType] = useState('question'); // Default to showing questions
-
+  const qdata = localStorage.getItem('qdata');
+  console.log(qdata);
   return (
+
     <div>
+      
       <div>
         <button onClick={() => setViewType('question')}  class="console-btn  btn-outline-dark">Question</button>
         <button onClick={() => setViewType('submissions')}  class="console-btn  btn-outline-dark">Submissions</button>
@@ -19,45 +22,42 @@ const QuestionHubPage = (props) => {
 const QuestionDetailSection = (props) => {
   // Your question detail section JSX
   return (
-    <div className="question-sec">
+    <div className="question-sec">  
       {/* {QuesData.map((item) => (
         <Question key={question.questionId} questionData={question} />
       ))} */}
-        <div className="que-name">
+        <div className="que-name">  
           
           <h2> {props.QuesData.title} </h2>
+          <h8>Points : {props.QuesData.points}</h8>
+
           
         </div>
         <div className="quepart que-description" Style="height: auto;">
           {/* <h4>Description</h4> */}
           {HtmlReactParser(String(props.QuesData.description))}
           
-          <h4>Input Format</h4>
+          <h6>Input Format</h6>
            {HtmlReactParser(String(props.QuesData.ipFormate))}
 
 
-       <h4>Output Format</h4>{"\n"}
-       {HtmlReactParser(String(props.QuesData.sampleOp))}
+       <h6>Output Format</h6>
+       {HtmlReactParser(String(props.QuesData.opFormate))}
 
-
-       <h4>Sample Input</h4>{"\n"}
-       {HtmlReactParser(String(props.QuesData.sampleIp))}
-       <h4>Sample Output</h4>{"\n"}
-       {HtmlReactParser(String(props.QuesData.sampleOp))}
+       <h6>Sample Input-Output</h6>
+       {HtmlReactParser(String(props.QuesData.inputOutputBlock))}
           
          
         
-          <h3>Question Constraints</h3>{"\n"}
+          <h6>Constraints</h6>
           {HtmlReactParser(String(props.QuesData.constraints))}
          
 
-          <h3>Author</h3>{"\n"}
+          <h6>Author</h6>
           <p>{props.QuesData.author}
-          </p>{"\n"}
+          </p>
 
-          <h3>Points</h3>{"\n"}
-          <p>{props.QuesData.points}
-          </p>{"\n"}
+          
       </div>
       {/* <div className="iop">
         <div className="rc-input-output">

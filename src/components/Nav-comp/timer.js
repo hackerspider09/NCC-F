@@ -21,6 +21,7 @@ const CountdownRedirect = () => {
     var remain = countDown - now;
     // console.log("timeisover ",remain); 
     if (parseInt(remain) < 0){
+      // localstorage.clear();
       setIsOver(true);
       return true;
     }
@@ -31,9 +32,9 @@ const CountdownRedirect = () => {
     // if (isOver())
     AxiosInstance.get("/api/gettime/")
             .then((response) => {
-                console.log("enter in then ");
-                console.log(response.data);
-                console.log(response.data[0].endTime);
+                // console.log("enter in then ");
+                // console.log(response.data);
+                // console.log(response.data[0].endTime);
                 // const dateTime = new Date(response.data[0].endTime);
                 // const hours = dateTime.getUTCHours();
                 // const minutes = dateTime.getUTCMinutes();
@@ -45,7 +46,7 @@ const CountdownRedirect = () => {
             })
             .catch((error) => {
                 
-                console.log("enter in error ",error);
+                // console.log("enter in error ",error);
 
             })
   },[]);
@@ -53,21 +54,19 @@ const CountdownRedirect = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const now = new Date();
+      const now = new Date().getDate();
       const timeDifference = getTimeDifference(targetTime);
-      const targettime = new Date(targetTime)
+      const targettime = new Date(targetTime).getDate();
       if (isTimeOver()){
         // toast.error("Time Over"); 
         navigate("/result");
       }
 
-      if (now > targetTime && now.getDate() !== targetTime.getDate()) {
+      if (now > targetTime && now !== targetTime) {
         // Redirect if the time has ended and the day is not the same
         // history.push('/new-route'); // Replace with your desired route
-        console.log("dfsdf")
         redirect("/leaderboard")
       } else {
-        console.log("Dfs")
         setRemainingTime(timeDifference);
       }
     }, 1000);

@@ -11,9 +11,14 @@
     
 }
 
-@keyframes fadeInUp {
-    to {
-      /* opacity: 1; */
-      transform: scale(1);  
-    }
+
+
+  .status{
+    display: flex;
+    flex-direction: column;
+  }
+  .alltext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }

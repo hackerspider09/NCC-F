@@ -90,6 +90,8 @@ footer {
     flex-direction: column;
     flex-wrap: wrap;
     
+    width: 250px;
+    max-width: 100%;
     min-height: 200px;
     
 }
@@ -105,9 +107,15 @@ footer {
     padding:0.5rem 0.7rem; 
     border-radius: 0.5rem;
     border-style:none;
-    background-color: #0e0758; 
+    background-color: #0e0758;
     font-size: 0.95rem;
     color:#FFFFFF; 
+}
+.thwala button:hover{
+    /* transform: scale(1.2); */
+    background-color: #0e0758;
+    /* background-color: #5f287994; */
+    border: solid white 1px;
 }
 
 .question-table .card{
@@ -212,16 +220,15 @@ footer {
 }
 
 .btn a{
-    color: white;
+    color: white;    
     text-decoration: none;
 }
 .backgr
 {
   min-width: 700px;
   min-height: 100vh;
-
-  background: rgb(6,4,32);
-background: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgba(127,58,180,1) 48%, rgba(9,8,74,1) 81%, rgba(5,5,36,1) 91%);
+  background: rgb(34,5,65);
+background: linear-gradient(90deg, rgba(34,5,65,1) 29%, rgba(106,20,135,1) 54%, rgba(21,6,57,1) 77%);
 
   /* background: rgb(129,63,251);
   background: radial-gradient(circle, rgba(129,63,251,1) 11%, rgba(39,11,57,1) 90%); */
@@ -256,8 +263,9 @@ background: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgb
 
 .card:hover{
     transform: scale(1.1);
-    background: rgb(51,32,162);
-background: linear-gradient(242deg, rgba(51,32,162,1) 26%, rgba(127,58,180,1) 48%, rgba(37,36,164,1) 100%);
+    /* background: rgb(51,32,162);
+    background: linear-gradient(242deg, rgba(51,32,162,1) 26%, rgba(127,58,180,1) 48%, rgba(37,36,164,1) 100%); */
+    border: solid white 2px;
 }
 .modal-content{
     background-color: rgba(75, 42, 116, 0.932);
@@ -266,3 +274,13 @@ color:white}
 .tbody{
     background-color:white;
 }
+
+.question-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  

@@ -12,13 +12,25 @@ import Consolecontent from './consolecontent';
 const subendPoint = "/api/submit/";
 export default function Codingpage() {
   
-  const [ConsoleMenuOpen, setConsoleMenuOpen] = useState(false);
+  // const [ConsoleMenuOpen, setConsoleMenuOpen] = useState(false);
   const { questionId } = useParams();
   const endPoint = `/api/questions/${questionId}/`;
+const [modalClass,setModalClass] = useState('');
+const [isModalActive, setIsModalActive] = useState(false);
 
-  const toggleModal = () => {
-     setConsoleMenuOpen(!ConsoleMenuOpen);
-  }
+const handleButtonClick = (buttonId) => {
+  setModalClass(buttonId);
+  setIsModalActive(true);
+};
+
+const handleModalContainerClick = () => {
+  setModalClass('out');
+  setIsModalActive(false);
+};
+  // const toggleModal = () => {
+  //    setConsoleMenuOpen(!ConsoleMenuOpen);
+  // setIsModalActive(!isModalActive);
+  // }
 
 
   const [QuesData,setQuesData] = useState([]);
@@ -227,7 +239,7 @@ export default function Codingpage() {
             code={code}
             onChange={onChange}
             language={language?.value}
-            theme={theme.value}
+            theme={theme.valueOf}
           />
         </div>
 
@@ -246,19 +258,27 @@ export default function Codingpage() {
         
         <button type="button" className="console-btn  btn-outline-dark" data-toggle="collapse" id="console-btn"
           data-target="#test-cases"         
-          onClick={toggleModal}>
+          // onClick={toggleModal}>
+          onClick={() => handleButtonClick('console-btn')}>
           Console 🔼
           <ion-icon name="chevron-up-outline" className="up mx-2 "></ion-icon>
           <ion-icon name="chevron-down-outline" className="down hidden"></ion-icon>
         </button>
-        {ConsoleMenuOpen && (
-                            // <div
-                                
-                            //     className=""
-                            // >
-                                <Consolecontent onClick={toggleModal} />
-                            //</div>
-                        )}
+
+        <div id="modal-container" onClick={handleModalContainerClick}>
+         <div class="modal-background">
+          <div class="modal">
+          {ConsoleMenuOpen && (
+                           
+                           <Consolecontent onClick={toggleModal} />
+                       
+                   )}
+          </div>
+     
+
+         </div>
+        </div>
+        
       
       <div className="submit-btn">
         <button type="button" className="run-btn   btn-outline-dark"  onClick={() => handleSubmit(false)}>Run</button>

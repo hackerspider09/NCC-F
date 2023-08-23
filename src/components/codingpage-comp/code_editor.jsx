@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import Editor from "@monaco-editor/react";
+ import   {useParams} from  'react-router-dom'
 // const defaultTemplate ={
 //   welcomeMessage :"welcome",
   
@@ -11,7 +12,8 @@ import Editor from "@monaco-editor/react";
   
 // };
 
-const CodeEditorWindow = ({ onChange, language, code, theme }) => {
+const CodeEditorWindow = ({ onChange, language, code, theme ,questionId }) => {
+  // const { questionId } = useParams();
   const [value, setValue] = useState(code || "");
  
   // const [currentTemplate, setCurrentTemplate] = useState(defaultTemplate );
@@ -23,10 +25,11 @@ const CodeEditorWindow = ({ onChange, language, code, theme }) => {
   //     setCurrentTemplate(pythonTemplate);
 
   //   }
-
+  console.log("On editor : ", questionId)
   useEffect(() => {
     // Load content from local storage
-    const storedCode = localStorage.getItem("editorContent");  
+    console.log(questionId);
+    const storedCode = localStorage.getItem(questionId);  
     if (storedCode) {
       setValue(storedCode);  
     }
@@ -37,7 +40,7 @@ const CodeEditorWindow = ({ onChange, language, code, theme }) => {
     onChange("code", value);   
 
     // Save content to local storage
-    localStorage.setItem("editorContent", value,)
+    localStorage.setItem(questionId, value,)
   };
 
   return (

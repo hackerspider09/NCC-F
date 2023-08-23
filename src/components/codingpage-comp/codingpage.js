@@ -1,6 +1,6 @@
 import {React,useState,useEffect} from 'react'
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import "./codingpage.css";
 import { getToken} from '../../Utils/utils';
 import CodeEditorWindow from './code_editor';
@@ -18,6 +18,7 @@ const subendPoint = "/api/submit/";
 
 
 export default function Codingpage() {
+  const nav = useNavigate();
   
   const [ConsoleMenuOpen, setConsoleMenuOpen] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
@@ -35,6 +36,7 @@ export default function Codingpage() {
   const [textFieldValue, setTextFieldValue] = useState('');   //to take input from user
   
   const { questionId } = useParams();
+  console.log("Debugging : ",questionId)
   const endPoint = `/api/questions/${questionId}/`;
 
   const toggleModal = () => {
@@ -53,6 +55,7 @@ export default function Codingpage() {
 
 
   useEffect(()=>{
+    
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
             .then((response) => {
@@ -84,7 +87,9 @@ export default function Codingpage() {
                 }
             })
             .catch((error) => {
-                
+              nav("/question");
+              console.log("enter in error ",error);
+              console.clear();
                 console.log("enter in error ",error);
 
             })
@@ -105,6 +110,14 @@ export default function Codingpage() {
       'input': `${textFieldValue}`,
       'isSubmitted': `${val}`
     }
+    console.log(QuesData.sampleIp)
+
+    if(submissionpayload['input'] ===  '')
+    {
+        submissionpayload['input']=QuesData.sampleIp;
+    }
+
+    console.log(submissionpayload)
     
     // e.preventDefault();
     addAuthToken(getToken());
@@ -132,6 +145,7 @@ export default function Codingpage() {
             })
             .catch((error) => {
               setIsButtonEnabled(false);
+              console.clear();
                 console.log("enter in error ",error);
 
             })
@@ -170,6 +184,7 @@ export default function Codingpage() {
   const onChangenew = (action,data) => {
     switch (action) {
       case "code": {
+
         setCode(data);
         break;
       }
@@ -192,7 +207,7 @@ export default function Codingpage() {
     {/* <!-- the Question section starts here  --> */}
     <div className="questionpart">
 
-      <QuestionHubPage QuesData={QuesData} question_id={questionId}/>
+      <QuestionHubPage QuesData={QuesData} question_id={questionId} />
 
     </div>
     
@@ -217,6 +232,7 @@ export default function Codingpage() {
             onChange={onChangenew}
             language={language?.value}
             theme={theme.value}
+            questionId ={questionId}
           />
         </div>
 
@@ -245,7 +261,7 @@ export default function Codingpage() {
                                 
                             //     className=""
                             // >
-                                <Consolecontent onClick={toggleModal} data={ExecutedData} isSubmit={isSubmit} codeInput={parse(String(sampleInput))} onDataChange={handleDataChange} changedData={ExecutedData}  onTextFieldChange={handleTextFieldChange}/>
+                                <Consolecontent onClick={toggleModal} data={ExecutedData} isSubmit={isSubmit} codeInput={sampleInput} onDataChange={handleDataChange} changedData={ExecutedData}  onTextFieldChange={handleTextFieldChange}/>
                             //</div>
                         )}
       

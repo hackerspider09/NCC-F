@@ -2,13 +2,21 @@
 
 /* Style for the container */
 
+.body{
+
+  background: rgb(34,5,65);
+  background: linear-gradient(90deg, rgba(34,5,65,1) 29%, rgba(106,20,135,1) 54%, rgba(21,6,57,1) 77%);
+}
+
 .container {
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #090909;
-    border-radius: 5px;
+    border: 1px solid #090909;  
+    border-radius: 5px;   
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     color: #000000;
+    background: rgb(34,5,65);
+    background: linear-gradient(90deg, rgba(34,5,65,1) 29%, rgba(106,20,135,1) 54%, rgba(21,6,57,1) 77%);
   }
   
   /* Style for the title */
@@ -18,14 +26,14 @@
   
   /* Style for the DataTable */
   .custom-table {
-    margin-top: 20px;
+    margin-top: 20px;  
   }
   
   /* Style for table header */
   .rdt_TableHead {
-    background-color: #991010;
+    background-color: #991010;  
     font-weight: bold;
-    color:#000000;
+    color:#000000; 
 
   }
   
@@ -36,23 +44,26 @@
   
   /* Style for table cells */
   .rdt_TableCell {
-    padding: 10px;
+    padding: 10px;   
     
   }
   
   /* Style for odd rows */
   .rdt_TableRow:not(.rdt_TableRowStacked):nth-child(odd) {
-    background-color: #0c0c0c;
+    background: rgb(58,6,58);
+background: linear-gradient(90deg, rgba(58,6,58,1) 15%, rgba(110,31,146,1) 50%, rgba(43,5,45,1) 90%); 
   }
-  .rdt_TableRow:not(.rdt_TableRowStacked):nth-child(even) {
-    background-color: #0c0c0c;
+  .rdt_TableRow:not(.rdt_TableRowStacked):nth-child(even) { 
+    background: rgb(58,6,58);
+background: linear-gradient(90deg, rgba(58,6,58,1) 15%, rgba(110,31,146,1) 50%, rgba(43,5,45,1) 90%);
+    
   }
   /* Style for pagination */
   .pagination {
-    margin-top: 10px;
-    display: flex;
+    margin-top: 10px;  
+    display: flex; 
     justify-content: center;
-    align-items: center;
+    align-items: center;  
   }
   
   .pagination .rdt_TablePagination {

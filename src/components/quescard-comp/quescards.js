@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import './quescards.css'; // Import your custom CSS
-import { Link } from 'react-router-dom'
+import { Link ,useNavigate} from 'react-router-dom'
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
 import { BsCheck2Circle } from 'react-icons/bs';
@@ -13,9 +13,12 @@ const tasks = [
 ];
 
 function App() {
-  
+  const nav = useNavigate();
 const [Qdata, setQdata] = useState(tasks);
   useEffect(()=>{
+   
+
+    
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
             .then((response) => {
@@ -24,19 +27,27 @@ const [Qdata, setQdata] = useState(tasks);
                     console.log("enter in then if ");
                     console.log(response.data);
                     setQdata(response.data)
-
-                }
-                else {
+                    const questionDetails = {};
+                  for(let i = 1; i <=response.data.length; i++) {
                     
-                    console.log("Error In fetch");
+                       questionDetails[i] = response.data[i-1].questionId;
+
+                   }
+                   localStorage.setItem("qdata",JSON.stringify(questionDetails));
+                  }
+                else {
+                  console.log("Error In fetch");
                 }
-            })
-            .catch((error) => {
-                toast.error(error.response.data.msg);
-                console.log("enter in error ",error);
+              })
+              .catch((error) => {
+                // nav("/question");
+              console.log("enter in error ",error);
+              console.clear();
 
 
             })
+
+
   },[]);
 
 
@@ -66,22 +77,19 @@ const [Qdata, setQdata] = useState(tasks);
         </div>
       </div>
       <div className="thwala">
-      
-        <button
-          type="button"
-          // className="btn btn-primary btn-sm"
-          className={`btn btn-primary btn-sm `}
-          data-bs-toggle="modal"
-          data-bs-target="#myModal"
-        >
-          {/* <a href={task.questionId}>SOLVE</a> */}
-          <Link to={`/question/${task.questionId}`}> {task.solvedByTeam ? "SOLVED" : "SOLVE"} </Link> 
-          <span> {task.solvedByTeam ? <BsCheck2Circle/>  : ""} </span>
-          
-        </button>
-        
-      
-      </div>
+    <button
+      type="button"
+      className={`btn btn-primary btn-sm `}
+      data-bs-toggle="modal"
+      data-bs-target="#myModal"
+    >
+      <Link to={`/question/${task.questionId}`}>
+        {task.solvedByTeam ? "SOLVED" : "SOLVE"} 
+        <span> {task.solvedByTeam ? <BsCheck2Circle/>  : ""} </span>
+      </Link>
+    </button>
+  </div>
+
     </div>
   ));
 
@@ -96,7 +104,7 @@ const [Qdata, setQdata] = useState(tasks);
         <h2>Questions</h2>
       </div>
       
-        <table className="question-table table table-responsive-sm">
+        <table className="question-table table table-responsive-sm question-container">
           <tbody>
             <div className="badadiv">{rows}</div>
           </tbody>
