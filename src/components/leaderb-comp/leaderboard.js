@@ -5,13 +5,19 @@ import DataTable from "react-data-table-component";
 import "./leaderboard.css";
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
+
+import LoaderComponent from "../loader/loader"; 
+
 const endPoint = "/api/leaderboard/";
 var data={};
 // var data1={};
 const Leaderboard = () => {
+  const [loading, setLoading] = useState(false);
+
   const [dataSet, setDataSet] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   useEffect(()=>{
+    setLoading(true);
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
             .then((response) => {
@@ -39,6 +45,10 @@ const Leaderboard = () => {
 
                     console.log("data ",typeof(dataSet));
                     console.log(dataSet);
+                    setTimeout(()=>{
+                      setLoading(false);
+
+                    },2000);
                     // console.log(response.data.juniorLeaderboard);
 
                 }
@@ -90,18 +100,18 @@ const Leaderboard = () => {
   return (
     <>
     <body>
-    
+      <div> {loading && <LoaderComponent show={true} />}</div>
       <div className="row">
-        <h1 className="mt-4 mb-3">Leaderboard</h1>
+        <h1 className="mt-4 mb-3 text-center">Leaderboard</h1>
         <div className="searchFunc">
-        <input className="searchFunc2"
+        <input className="searchFunc2 px-3 py-2  mx-4" 
             type="text"
              value={searchQuery}
                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by UserName..."
         />
         </div>
-        <div className="Hello">
+        <div className="Hello px-5">
           <DataTable
 
             columns={columns}

@@ -1,17 +1,30 @@
 .chaljabhai {
     /* margin: 55px 20px 20px 20px; */
     color: white; 
-    margin-bottom: 500px;   
-    background-color: black;  
-    display: grid;  
+    margin-bottom:16.625rem;   
+    background-color: rgb(6, 20, 52);  
+    /* display: grid;   */
     align-items: flex-start;   
     justify-content: flex-end;   
     position: fixed;  
-    box-shadow: 3px 3px 3px gray;  
-    
+    box-shadow: 3px 3px 3px rgb(50, 49, 49);  
+    width:42.875rem;
+    height:12.5rem;
+    margin-left:10.175rem;
+    border:1px solid white;
+    border-radius: 7px;
+    justify-content: center;
+    /* display: flex;
+    flex-direction: row; */
 }
 
-
+.consoleBlocks{
+ display: flex;
+    flex-direction: row; 
+   
+  padding-top: 0px;
+  margin-top: 0px;
+}
 
   .status{
     display: flex;
@@ -22,3 +35,17 @@
     flex-direction: column;
     align-items: center;
   }
+
+ .Inputdetails{
+ width: 16.625rem;
+  height:160px;
+ }
+
+ .Outputdetails{
+  width: 16.625rem;
+  height:160px;
+ }
+ 
+#input1{
+  height:120px;
+}

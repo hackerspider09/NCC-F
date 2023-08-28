@@ -131,7 +131,7 @@ color: #fff;
 .questionpart{
   /* margin:0px auto; */
   padding: 0px 8px;
-  display: grid;
+  /* display: grid; */
   grid-template-rows: auto;
   height: 80vh; 
   width: 640px;
@@ -144,12 +144,13 @@ color: #fff;
 {
   overflow-x: hidden;
   overflow-y: scroll; 
-  height: 70vh;
+
   padding-right: 20px;
   padding-left: 0px;
-  width: 750px;
-  height: 500;
-
+  width: 46.875rem;
+  height:26.25rem;
+margin-bottom:20px;
+margin-left:15px;
 
 }
 /* .question-sec:hover{
@@ -261,7 +262,7 @@ margin-bottom: 0px;
   transition: all 0.4s;
 }
 .console-btn,.run-btn {
-  border: 3px solid rgba(154, 86, 206, 0.911);;
+  border: 3px solid rgba(154, 86, 206, 0.911);
   color: rgb(255, 255, 255);
 }
 .console-btn:hover,.run-btn:hover {
@@ -670,32 +671,49 @@ ion-icon {
   color: black;
 }
 
-#modal-container {
-  position:fixed;
-  display:table;
-  height:50%;
-  width:50%;
-  top:0;
-  left:0;
-  transform:scale(0);
-  z-index:1;
-  &.console-btn {
-    transform:scaleY(.01) scaleX(0);
-    animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    .modal-background {
-      .modal {
-        transform:scale(0);
-        animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-      }
-    }
-    &.out {
-      transform:scale(1);
-      animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-      .modal-background {
-        .modal {
-          animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-        }
-      }
-    }
-  }
+
+.togglepanti{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width:31.25rem;
+  height: 50px;
+  border:0.1rem #ffffff;
 }
+.questogglebtn{
+ display: inline-block;
+  /* padding: 0.5em 1.7em; */
+  margin: 0 0.1em 0.1em 0;
+  border: 0.2rem solid  rgba(154, 86, 206, 0.911);
+  border-radius: 0.65em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight:bold;
+  font-size:20px;
+  color: #ffffff;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.2s;
+  background-color: rgb(19, 8, 43);
+  width: 3.3rem; /* Adjust this value as needed */
+  height: 2.5rem; /* Adjust this value to match the width */
+  /* margin-right: 5px; */
+
+} 
+
+.questogglebtn.highlighted{
+  color: rgb(255, 255, 255);
+  background-color:rgb(151, 47, 255);
+  border: 0.2rem solid  #ffffff;
+  border-radius: 0.65em;
+}
+
+
+
+
+
+
+
+
+

@@ -4,8 +4,9 @@
 
 .body{
 
-  background: rgb(34,5,65);
-  background: linear-gradient(90deg, rgba(34,5,65,1) 29%, rgba(106,20,135,1) 54%, rgba(21,6,57,1) 77%);
+  background: rgb(34,5,65);  
+  background: linear-gradient(90deg, rgba(34,5,65,1) 29%, rgba(106,20,135,1) 54%, rgba(21,6,57,1) 77%); 
+  
 }
 
 .container {
@@ -102,13 +103,35 @@ background: linear-gradient(90deg, rgba(58,6,58,1) 15%, rgba(110,31,146,1) 50%, 
   }
 
   .searchFunc2{
-    color:#000000
+    color:white;
+    background: #2d0c53;
+    border: 1px solid #8e09e7;
+    border-radius: 5px;
   }
 
   .buGObk {
-background-color: none;
+background-color: none;  
   }
 
   .rdt_TableHead{
-    background-color: aqua;
+    background-color: aqua;  
   }
+  .hRfGpm{
+    color: white;
+  }
+
+  .sc-eLSjS{
+    color: white!important;
+  }
+  .dHwQJD{
+    background-color: #45096d;
+    font-size: 1.2rem;
+  }
+  .isdzTY{
+    background: #45096d;
+    color: white!important;
+  }
+  .hRfGpm{
+    background-color: #2d0c53;
+  }
+  

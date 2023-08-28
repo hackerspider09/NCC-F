@@ -122,16 +122,20 @@ const [Subdata,setSubdata] = useState([]);
           className="col custom-table"
         />
         <Modal className="modalpanti" isOpen={isModalOpen} onRequestClose={closeModal}>
-          <div>
-          <pre>{selectedCode}</pre>
+          <div className='modalinside'>
+         
           <CopyToClipboard text={selectedCode}>
-            <button onClick={handleCopy}>
+            <button  className='copybtn' onClick={handleCopy}>
               {copied ? 'Copied!' : 'Copy'}
             </button>
           </CopyToClipboard>
-          <button onClick={closeModal}>Close</button>
+          <button  className="closebtn" onClick={closeModal}>Close✖️</button>
           {/* <button className='closebtn' onClick={closeModal}>Close</button> */}
           </div>
+          <div className='Codecopycontent'>
+          <pre>{selectedCode}</pre>
+          </div>
+         
         </Modal>
       </div>
     </div>

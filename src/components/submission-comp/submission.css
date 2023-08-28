@@ -272,13 +272,95 @@ border-radius: 5px;
  .modalpanti{
     color: #000;
     background-color: #413c37;
-    width: 900px;
-    height:900px;
-  margin-top: 200px;
-  margin-left: 200px;
+    width: 62.5rem;
+    height:  34.375rem;
+  margin-top: 75px;
+  margin-left: 270px;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+
+ }
+
+ .modalinside{
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 62.5rem;
+      display: flex;
+   justify-content: space-between;
  }
  .closebtn{
-    color: #c92323;
-    margin-left: 450px;
+    outline: 0;
+    grid-gap: 8px;
+    align-items: center;
+    background: 0 0;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 16px;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.2;
+    overflow: hidden;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .14s ease-out;
+    white-space: nowrap;
+   color: white;
+
  }
+
+ .closebtn:hover {
+    box-shadow: 4px 4px 0 #ffffff;
+    transform: translate(-4px,-4px);
+}
+.closebtn:focus-visible{
+    outline-offset: 1px;
+}
+ .copybtn{
+
+    outline: 0;
+    grid-gap: 8px;
+    align-items: center;
+    background: 0 0;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 16px;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.2;
+    overflow: hidden;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .14s ease-out;
+    white-space: nowrap;
+   color: white;
+
+ }
+
+ .copybtn:hover {
+    box-shadow: 4px 4px 0 #ffffff;
+    transform: translate(-4px,-4px);
+}
+.copybtn:focus-visible{
+    outline-offset: 1px;
+}
+.Codecopycontent{
+    overflow-y: scroll;
+    color:white;
+    width:60.5rem;
+    margin-bottom:20px;
+    border: 0.2rem solid white;
+}
+
+
+

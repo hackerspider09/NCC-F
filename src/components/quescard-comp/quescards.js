@@ -5,6 +5,8 @@ import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
 import { BsCheck2Circle } from 'react-icons/bs';
 import {  toast } from 'react-toastify';
+import LoaderComponent from "../loader/loader"; 
+// import Graph from "../Graph/graph"
 
 const endPoint = "/api/questions/"
 
@@ -14,10 +16,11 @@ const tasks = [
 
 function App() {
   const nav = useNavigate();
+  const [loading, setLoading] = useState(false);
 const [Qdata, setQdata] = useState(tasks);
   useEffect(()=>{
    
-
+    setLoading(true);
     
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
@@ -34,6 +37,10 @@ const [Qdata, setQdata] = useState(tasks);
 
                    }
                    localStorage.setItem("qdata",JSON.stringify(questionDetails));
+                   setTimeout(()=>{
+                    setLoading(false);
+
+                  },5000);
                   }
                 else {
                   console.log("Error In fetch");
@@ -98,6 +105,8 @@ const [Qdata, setQdata] = useState(tasks);
 
   return (
     <>
+    {/* <Graph  shouldAddNumber={true}/> */}
+    {/* <div> {loading && <Graph  shouldAddNumber={loading}/> }</div> */}
       {/* ...Navbar and other components */}
       <div className="backgr">
       <div className="Heading">

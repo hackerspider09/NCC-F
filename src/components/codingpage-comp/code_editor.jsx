@@ -15,6 +15,12 @@ import Editor from "@monaco-editor/react";
 const CodeEditorWindow = ({ onChange, language, code, theme ,questionId }) => {
   // const { questionId } = useParams();
   const [value, setValue] = useState(code || "");
+  const [CodeSnippet,setCodeSnippet] = useState("");
+  const CodeSyntax = {
+    "cpp":"#include <bits/stdc++.h>\nusing namespace std;\nint main() {\n// your code goes here\nreturn 0;\n}",
+    "c":"",
+    "python":"#Start Your Program Here..."
+  }
  
   // const [currentTemplate, setCurrentTemplate] = useState(defaultTemplate );
   // const handleLanguageChange = (language)=>{
@@ -29,18 +35,22 @@ const CodeEditorWindow = ({ onChange, language, code, theme ,questionId }) => {
   useEffect(() => {
     // Load content from local storage
     console.log(questionId);
-    const storedCode = localStorage.getItem(questionId);  
+    const storedCode = localStorage.getItem(questionId+language);  
     if (storedCode) {
       setValue(storedCode);  
+    }else{
+      
+      setValue(CodeSyntax[language]);  
     }
-  }, []); // Run this effect only once on component mount
+
+  }, [language]); // Run this effect only once on component mount
 
   const handleEditorChange = (value) => {
     setValue(value);    
     onChange("code", value);   
 
     // Save content to local storage
-    localStorage.setItem(questionId, value,)
+    localStorage.setItem(questionId+language, value,)
   };
 
   return (
@@ -50,14 +60,8 @@ const CodeEditorWindow = ({ onChange, language, code, theme ,questionId }) => {
         width="100%"
         language={language || "cpp"}
         value={value}
-        theme={theme}
-        defaultValue="#include <iostream>
-using namespace std;
-
-int main() {
-  // your code goes here
-  return 0;
-}"
+        theme={theme?theme:"tomorrow-night-blue"}
+        defaultValue={CodeSyntax["cpp"]}
         onChange={handleEditorChange}  
       />
     </div>

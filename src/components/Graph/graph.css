@@ -1,0 +1,22 @@
+.Loader{
+    height: 90vh;
+    width: 100%;
+    align-items: center;
+    display: grid;
+    background-image: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgba(127,58,180,1) 48%, rgba(9,8,74,1) 81%, rgba(5,5,36,1) 91%);
+
+    padding: 7rem;
+
+    user-select: none;
+
+}
+@media only screen and (max-width: 600px) {
+    .Loader {
+        padding: 0;
+    }
+  }
+
+
+.loaderh1{
+    text-align: center;
+}

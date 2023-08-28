@@ -1,6 +1,6 @@
 import {React,useState,useEffect} from 'react'
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams,useNavigate,Link } from 'react-router-dom';
 import "./codingpage.css";
 import { getToken} from '../../Utils/utils';
 import CodeEditorWindow from './code_editor';
@@ -12,6 +12,7 @@ import { defineTheme } from "../../lib/defineTheme";
 import Consolecontent from './consolecontent';
 import parse from 'html-react-parser'
 import "./tinymce.css"
+import HtmlReactParser from 'html-react-parser'
 
 const subendPoint = "/api/submit/";
 
@@ -26,7 +27,8 @@ export default function Codingpage() {
   const [QuesData,setQuesData] = useState([]);
   const [ExecutedData,setExecutedData] = useState([]);
   const [ExecutedChangedData, setExecutedChangedData] = useState(null);
-  
+  const [Questiontoggle,setQuestiontoggle] = useState({});
+  const [CodeSnippet,setCodeSnippet] = useState("");
   
   const [isSubmit, setisSubmit] = useState(false);
   const [sampleInput, setsampleInput] = useState("");
@@ -34,7 +36,21 @@ export default function Codingpage() {
   const [theme, setTheme] = useState("cobalt");
   const [language, setLanguage] = useState(languageOptions[0]);
   const [textFieldValue, setTextFieldValue] = useState('');   //to take input from user
+  const [highlightedButton, setHighlightedButton] = useState(null);
+  const CodeSyntax = {
+    "cpp":"#include <bits/stdc++.h>\nusing namespace std;\nint main() {\n// your code goes here\nreturn 0;\n}",
+    "c":"",
+    "python":"#Start Your Program Here..."
+  }
   
+
+  const handleButtonClick = (buttonkey) => {
+    if (highlightedButton === buttonkey) {
+      setHighlightedButton(null);
+    } else {
+      setHighlightedButton(buttonkey);
+    }
+  };
   const { questionId } = useParams();
   console.log("Debugging : ",questionId)
   const endPoint = `/api/questions/${questionId}/`;
@@ -55,7 +71,14 @@ export default function Codingpage() {
 
 
   useEffect(()=>{
-    
+    const jsonObject = JSON.parse(localStorage.getItem('qdata'));
+    setQuestiontoggle(jsonObject)
+    // console.log("hello",jsonObject);
+  //   const keysArray = Object.keys(jsonObject);
+  //  setQuestiontoggle(keysArray);
+    // keysArray.forEach(key => {
+    //   console.log(key);
+    // });
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
             .then((response) => {
@@ -93,7 +116,7 @@ export default function Codingpage() {
                 console.log("enter in error ",error);
 
             })
-  },[]);
+  },[endPoint]);
 
   
   const handleSubmit = async (val) => {
@@ -154,6 +177,8 @@ export default function Codingpage() {
 
 
 
+  
+
 
 
   // const handleCodeChange = (newCode) => {
@@ -172,13 +197,14 @@ export default function Codingpage() {
   }
   useEffect(() => {
     defineTheme("tomorrow-night-blue").then((_) =>
-      setTheme({ value: "tomorrow-night-blue", label: "tomorrow-night-blue" })
+      setTheme({ value: "tomorrow-night-blue", label: "Tomorrow-Night-Blue" })
     );
   },[]);
 
   const onSelectChange = (sl) => {
     console.log("selected Option...", sl);
     setLanguage(sl.name);
+  
   };
 
   const onChangenew = (action,data) => {
@@ -199,13 +225,35 @@ export default function Codingpage() {
   
   return (
     <>
-    <div className='mainBody'>
+   <div className='mainBody container-fluid'>
 
+     
   
     <section className="coding ">
-
+    
     {/* <!-- the Question section starts here  --> */}
     <div className="questionpart">
+      <div className='togglepanti'> 
+  {
+    Object.entries(Questiontoggle)
+  //  .map(([key, value]) =>HtmlReactParser( `<p>${key}: ${value}</p>`))
+   .map(([key, value]) =>(
+     <Link  key={key} to={`/question/${value}`}>
+    <button
+      type="button"
+      className={`questogglebtn ${highlightedButton === key ? 'highlighted' : ''}`}
+      onClick={() => handleButtonClick(key)}
+    >
+        {key} 
+       
+    </button>
+      </Link>
+   )
+  //  HtmlReactParser( `<p>${key}: ${value}</p>`)
+   )
+   
+}
+</div>
 
       <QuestionHubPage QuesData={QuesData} question_id={questionId} />
 
@@ -224,15 +272,16 @@ export default function Codingpage() {
       </div>
     <div className="codingpart">
     
-      <div className="code-section">
+      <div className="code-section" >
       
-      <div className="flex flex-col w-full h-full justify-start items-end">
+      <div className="flex flex-col w-full h-full  justify-start items-end">
           <CodeEditorWindow
             code={code}
             onChange={onChangenew}
             language={language?.value}
             theme={theme.value}
             questionId ={questionId}
+            CodeSnippet = {CodeSnippet}
           />
         </div>
 

@@ -5,7 +5,12 @@ html {
     margin: 0;
     padding: 0;
     /*font-family: sans-serif;*/ 
-    background-image: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgba(127,58,180,1) 48%, rgba(9,8,74,1) 81%, rgba(5,5,36,1) 91%);
+    /* background-image: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgba(127,58,180,1) 48%, rgba(9,8,74,1) 81%, rgba(5,5,36,1) 91%); */
+    background-image: linear-gradient(222deg, rgb(23, 4, 32) 15%, rgb(53, 8, 89) 28%, rgb(128, 67, 174) 48%, rgb(48, 7, 94) 81%, rgb(26, 5, 36) 91%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
   }
   /* .navbar,
   footer {
@@ -238,7 +243,7 @@ html {
     position: absolute;
   }
   .radio input + span:before {
-    transition: background 0.2s ease,
+    transition:  0.2s ease,
       transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
   }
   .radio input + span#a-button:before {
@@ -298,7 +303,7 @@ html {
 /* Variables */
 :root {
   --bg_body: #212121;
-  --bg_gradient_last_color: rgba(0, 212, 255, 1);
+  --bg_gradient_last_color: rgb(144, 0, 255);
   --bg_gradient: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
@@ -321,7 +326,8 @@ h1 {
 .form {
   width: 400px;
   height: webkit-fill-available;
-  padding: 64px 15px 24px;
+  padding: 0px 15px 24px;
+  padding-top:30px;
   margin: 7% auto;
 }
 
@@ -390,13 +396,13 @@ h1 {
   top: 0;
   right: 0;
   bottom: 0;
-  background: rgb(2, 0, 36);
+  background: rgb(25, 0, 36);
   background: var(--bg_gradient);
 }
 
 .block-cube .bg-right {
-  background: rgb(2, 0, 36);
-  background: rgba(0, 212, 255, 1);
+  background: rgb(29, 0, 36);
+  background: rgb(157, 0, 255);
   top: -5px;
   z-index: 0;
   bottom: 5px;
@@ -440,7 +446,7 @@ h1 {
 .block-cube.block-input .bg-right,
 .block-cube.block-input .bg {
   background: rgba(255, 255, 255, 0.5);
-  transition: background 0.2s ease-in-out;
+  transition:  0.2s ease-in-out;
 }
 
 .block-cube.block-input .bg-right .bg-inner,
@@ -454,7 +460,7 @@ h1 {
 .block-cube.block-input:hover .bg-right,
 .block-cube.block-input:focus .bg,
 .block-cube.block-input:hover .bg {
-  /* background: rgba(255, 255, 255, 0.8); */
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .block-cube-hover:focus .bg .bg-inner,
@@ -476,5 +482,25 @@ h1 {
   opacity: 1;
 }
 
-
+.LoginBox{
+  width: 450px;
+  height: 400px;
+  /* margin-left: 30vw; */
+  margin: auto;
+  /* border:2px solid ; */
+  border-color: rgb(26, 7, 45);
+  margin-top:80px;
+  border-radius:5px;
+  /* box-shadow: 5px 5px 2.5px #383737; */
+  background: rgba( 255, 255, 255, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 5px );
+border-radius: 10px;
+}
+.controlheading{
+  color: rgb(34, 9, 44);
+   text-align: center;
+   padding-top: 35px;
+}
 

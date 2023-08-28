@@ -27,7 +27,7 @@ export default function Login() {
     
     const submitLoginForm = (e) => {
         e.preventDefault();
-        userlogin(Logincred);
+        userlogin(Logincred);  
     
     }
 
@@ -78,12 +78,14 @@ export default function Login() {
         
 return (
     <>
+<div className="LoginBox">
 
-
-<form class="form" autocomplete="off"  onSubmit={submitLoginForm} >
-  <div class="control">
+<div class="controlheading">
     <h1>Login </h1>
   </div>
+<form class="form" autocomplete="off"  onSubmit={submitLoginForm} >
+ 
+  
   <div class="control block-cube block-input">
     <input name="username" type="text" placeholder="Username"  required="true" onChange={handleChange} />
     <div class="bg-top">
@@ -109,12 +111,12 @@ return (
     </div>
   </div>
 
-
+{/* 
             <div className="im-buttons">
                 <label className="radio" id="a-button">
                     <input name="im-buttons" type="radio" id="a-button" checked="checked" />
                     <span>Junior</span></label><label className="radio" id="b-button"><input name="im-buttons"
-                        type="radio" id="b-button" /><span>Senior</span></label></div>
+                        type="radio" id="b-button" /><span>Senior</span></label></div> */}
 
   <button class="btn block-cube block-cube-hover" type="submit">
     <div class="bg-top">
@@ -130,6 +132,9 @@ return (
   </button>
 
 </form>
+</div>
+
+
 
 </>
     

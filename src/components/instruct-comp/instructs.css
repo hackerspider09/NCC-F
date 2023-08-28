@@ -87,6 +87,7 @@ body {
     /* overflow-x: hidden; */
     /* padding-left: 300px; */
     padding-left: 40px;
+    margin-left: 70px;
   }
   .outerbox{
     transition: transform .2s;

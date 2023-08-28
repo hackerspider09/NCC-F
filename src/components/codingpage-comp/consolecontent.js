@@ -91,14 +91,15 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
 
   return (
     <div className="chaljabhai" id="test-cases">
-    <h3> TEST-CASES</h3>
+    <h4 className='heading'> TEST-CASES</h4>
 
     <div className="consoleBlocks"> 
 
        <div className="block1 blockInsideconsoleblock">
         {/* <h5>input {code.error}</h5> */}
         <TextField
-          id="filled-multiline-static"
+          className='Inputdetails'
+          id="input1"
           label="Input"
           color="secondary"
           multiline
@@ -108,6 +109,7 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
           focused
           inputProps={{ style: { color: "white" } }}
           onChange={handleInputChange}
+          
         />
 
       </div>
@@ -115,8 +117,9 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
 
        <div className="block2 blockInsideconsoleblock">
         <TextField
-            id="filled-multiline-static"
+            id="output2"
             label="Output"
+            className='Outputdetails'
             multiline
             rows={4}
             defaultValue={code?.error !== "" ? (
