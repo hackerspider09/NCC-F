@@ -45,5 +45,9 @@ bottom: 0;
 
 .Btn-div{
   display:flex;
-  padding-top: 30px;
+  padding-top: 2%;
+}
+
+.btnlog:hover{
+  border-width: 2px!important;
 }

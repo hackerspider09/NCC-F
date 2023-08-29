@@ -18,7 +18,7 @@ const CodeEditorWindow = ({ onChange, language, code, theme ,questionId }) => {
   const [CodeSnippet,setCodeSnippet] = useState("");
   const CodeSyntax = {
     "cpp":"#include <bits/stdc++.h>\nusing namespace std;\nint main() {\n// your code goes here\nreturn 0;\n}",
-    "c":"",
+    "c":"#include <stdio.h>\nint main() {\n\nprintf('Hello, world!');\n\nreturn 0;\n}",
     "python":"#Start Your Program Here..."
   }
  
@@ -49,7 +49,7 @@ const CodeEditorWindow = ({ onChange, language, code, theme ,questionId }) => {
     setValue(value);    
     onChange("code", value);   
 
-    // Save content to local storage
+    // Save code  to local storage
     localStorage.setItem(questionId+language, value,)
   };
 

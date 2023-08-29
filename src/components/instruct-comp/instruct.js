@@ -25,7 +25,7 @@ const btnstyle = {
 
   return (
     
-      <div className="row align">  
+      <div className="row align instruct">  
         <div className="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
         <div className="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-8 col-xxl-8">  
           <div className="heading instr">
@@ -58,8 +58,9 @@ const btnstyle = {
                 </label>
               </div>
               <div className="buttonboxouter" >
+              <Link to="/question/" style={btnstyle} onClick={() => 
+                    localStorage.setItem("contractAccept", true)}>
                 <button 
-                  type="submit"
                   // className={termsChecked ? 'enabled' : 'disabled'}
                   className={termsChecked? 'button':'proceed'}
               
@@ -69,10 +70,9 @@ const btnstyle = {
                 
                   
                 >
-                  <Link to="/question/" style={btnstyle} onClick={() => 
-                    localStorage.setItem("contractAccept", true)}> Proceed</Link>
+                   Proceed
                   
-                </button>
+                </button></Link>
               </div>
             </form>
           </div>

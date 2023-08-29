@@ -27,7 +27,7 @@
   
   /* Style for the DataTable */
   .custom-table {
-    margin-top: 20px;  
+    margin-top: 7px;  
   }
   
   /* Style for table header */
@@ -125,13 +125,23 @@ background-color: none;
   }
   .dHwQJD{
     background-color: #45096d;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
   }
   .isdzTY{
-    background: #45096d;
+    background: #45096d!important;
     color: white!important;
   }
   .hRfGpm{
     background-color: #2d0c53;
   }
-  
+  .hwVeUK > svg{
+    border: 2px solid black;
+    padding: 0.5px;
+  }
+  .hwVeUK > svg:hover{
+    border-color: white;
+  }
+  .hwVeUK:disabled{
+    color: #000000;
+    fill: white!important;
+  }

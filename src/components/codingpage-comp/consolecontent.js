@@ -8,10 +8,11 @@ import { RxCrossCircled } from 'react-icons/rx';
 import {  toast } from 'react-toastify';
 
 
-export default function Consolecontent({ isSubmit, data,codeInput,changedData, onDataChange , onTextFieldChange}) {
+export default function Consolecontent(props,{ isSubmit, data,codeInput,changedData, onDataChange , onTextFieldChange}) {
   const [code, setCode] = useState({});
   const [Verdict, setVerdict] = useState("");
   const [IsSubmitted, setIsSubmitted] = useState(false);
+  const [ShowSubmit, setShowSubmit] = useState(false);
   const [sampleInput, setsampleInput] = useState(false);
   const [allAC, setallAC] = useState(false);
 
@@ -19,12 +20,14 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
     setCode(data);
     setCode(changedData);
     setsampleInput(codeInput)
+    setIsSubmitted(isSubmit);
     console.log("code  ",sampleInput)
     console.log("code  ",code)
     console.log("data  ",typeof(data))
     console.log("data  ",data)
     console.log("change dat a ",changedData)
-  },[data])
+    console.log("is Submit",isSubmit)
+  },[data,isSubmit])
 
   useEffect(() => {
     if (changedData !== null) {
@@ -34,20 +37,22 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
     if (isSubmit) {
       setIsSubmitted(true);
     }
-    setsampleInput(codeInput)
-    // checkAllAC();
+    setsampleInput(codeInput);
+    checkAllAC();
 
     
-  }, [changedData]);
+  }, [changedData,isSubmit]);
 
 
 
 
   const checkAllAC = () => {
-    const allACC = Object.values(code).every(testCase => testCase.status === "AC");
+
+    const allACC = Object.values(code).every((testCase) => testCase.status === "AC");
+    setShowSubmit(true);
     if (allACC) {
       // Run your function here
-      console.log("All statuses are AC");
+      // console.log("All statuses are AC");
       setallAC(true);
       setVerdict("Passed");
       
@@ -67,9 +72,10 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
     if (Verdict !== ""){
       if (allAC){
         return "Passed";
-      }return "Failed";
-    }
+      } return "Failed";
+    
   }
+}
 
 
 
@@ -86,13 +92,20 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
     "CE": "yellow",
   };
 
-  
+  const handleClick = () => {
+    // Call the function passed from the parent component
+    props.onClick('Hello from child!');
+  };
   
 
   return (
     <div className="chaljabhai" id="test-cases">
-    <h4 className='heading'> TEST-CASES</h4>
-
+      <div className="header">
+      <h4 className='heading'> TEST-CASES</h4>
+      <button  className="closebtn3" onClick={handleClick} >✖️</button>
+      </div>
+    
+       
     <div className="consoleBlocks"> 
 
        <div className="block1 blockInsideconsoleblock">
@@ -135,11 +148,11 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
 
     </div>
     
-        {IsSubmitted ? (
-              <div className="Status">
-                <div className="overallStatus">
-        {/* Answer is {allAC ? "Correct" :"Failed"}.  {Verdict} */}
-      </div>
+        {IsSubmitted && ShowSubmit ? (
+    <div className="Status">
+      {/* <div className="overallStatus">
+        {allAC ? "Accepted" :"Wrong Answer"}:   {Verdict}
+      </div> */}
        <div className="alltext d-flex flex-wrap ">
 
               {/* <div className="test d-flex mx-3"> Test Case 4 <ion-icon name="checkmark-circle-outline" className="mx-3 my-1"
@@ -156,7 +169,7 @@ export default function Consolecontent({ isSubmit, data,codeInput,changedData, o
 
       </div>
             ) : (
-              ""
+              null
             )}
 
 

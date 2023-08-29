@@ -37,10 +37,10 @@ const [Qdata, setQdata] = useState(tasks);
 
                    }
                    localStorage.setItem("qdata",JSON.stringify(questionDetails));
-                   setTimeout(()=>{
-                    setLoading(false);
+                  //  setTimeout(()=>{
+                    // setLoading(false);
 
-                  },5000);
+                  // },5000);
                   }
                 else {
                   console.log("Error In fetch");

@@ -104,7 +104,7 @@ export default function Navbar() {
 
             <ul> { loggedIn && localStorage.getItem("contractAccept") ? <Link to="/question"  className='nav-link' >QuestionHub</Link> : "" } </ul>
             <ul> { loggedIn ? <Link to="/leaderboard"  className='nav-link' >Leaderboard</Link> : "" } </ul>
-            <ul> {loggedIn && (<button onClick={handleLogout} className = "btn btn-primary">Log Out</button>)} </ul>
+            <ul> {loggedIn && (<button onClick={handleLogout} className = "btn border border-white rounded text-light btnlog">Log Out</button>)} </ul>
     </div>
      
         

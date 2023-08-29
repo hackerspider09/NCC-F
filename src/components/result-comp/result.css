@@ -109,14 +109,14 @@
 
 .user_profile{
     align-self: center;
-    border: 1px solid #0b71bf;
+    border: 3px solid #0b71bf;
     margin: 5%;
     height: auto;
-    max-width: 95%;
-    min-height: 400px;
+    width: 75%;
+    min-height: 450px;
     /* background: #103e48; */
     background-image: linear-gradient(30deg, #6653fe -50%, #0c111b 30%, #6a31e6 280%);
-    border-radius: 0px;
+    border-radius: 14px;
 }
 
 .profile{
@@ -185,7 +185,9 @@
     /* background: #181816; */
 }
 
-.tbles th,td,
+ .userb{
+    padding: 0;
+ }
 
 .tbles th{
     padding: 5px;
@@ -258,7 +260,7 @@
 .top3:hover .card1{
     /* filter: blur(10px); */
     transform: scale(0.9);
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 .top3 .card1:hover{
@@ -341,7 +343,7 @@
     /* flex: 1; */
     /* margin-left: 40px; */
     /* background-color: rgb(11, 22, 31); */
-
+    width: 100%;
     margin: auto;
 }
 /* .table{
@@ -394,6 +396,7 @@
     /* margin-left:  10%;
     margin-right: 10%; */
     /* min-width: 250px; */
+    width: 90%;
     margin: auto;
 }
 .btn-hide{
@@ -467,7 +470,7 @@
 }
 
 .table td{
-    padding: 14px 21px!important;
+    padding: 7px 14px!important;
 }
 
 .table td:last-child{
@@ -506,6 +509,10 @@
     /* border-color: aqua; */
     outline: none;
 } 
+
+#mytable{
+    height: 100%!important;
+}
 
 #mytable td{
     color: rgb(16, 9, 16);

@@ -21,8 +21,14 @@ const getFormatedTime = (timestamp) => {
   return formattedTime // Display formatted time in h:mm:ss format
 }
 
+const statusColors = {
+  "AC": "green", // Define the color for "AC" status
+  "WA": "red",   // Define the color for other status, e.g., "WA"
+  "CE": "yellow",
+};
 // var data={};
 export default function Submission(props) {
+
 
   const [searchText, setSearchText] = useState('');
   const [selectedCode, setSelectedCode] = useState("");
@@ -44,8 +50,16 @@ export default function Submission(props) {
       const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
       return timeString;
     }, },
-    { name: "Status", selector: "status", sortable: true },
-    { name: "Code", selector: "code", sortable: true, cell: (row) => <button className='viewbts' onClick={() => handleViewCode(row.code)}>View</button>
+    { name: "Status", selector: "status", sortable: true,cell: row => (
+      <span
+        style={{
+          color: statusColors[row.status], // Set the color based on the status value
+        }}
+      >
+        {row.status}
+      </span>
+    ) },
+    { name: "Code", selector: "code", sortable: true, cell: (row) => <button className='viewbts bg-dark px-1 py-2 text-light btn-outline-warning' onClick={() => handleViewCode(row.code)}>View</button>
   },
 
 

@@ -129,8 +129,10 @@ class Graph extends Component {
     
     render() {
         return (
+            <div className="Badadiv">
+            <div className="divText">Please Wait...
+            </div>
             <div className="Loader" >
-        
                 <CanvasSvg
                     vertices={this.state.vertices}
                     edges={this.state.edges}
@@ -138,6 +140,7 @@ class Graph extends Component {
                     offset={this.state.offset}
                 />
                 {/* <h1 className='loaderh1'>Loading....</h1> */}
+            </div>
             </div>
         );
     }

@@ -171,35 +171,35 @@ const Result = () => {
              </div>
              <div className="top6">
                 <div className="tble">
-                    <table className="leader-table table table-hover" id="myTable" bgcolor = "#2E363B">
+                    <table className="leader-table table-md table-hover" id="myTable" bgcolor = "#2E363B">
                       <thead>
                         <tr className="headers" bgcolor="#13303E">
-                          <th scope="col" className="userb">Rank</th>
-                          <th scope="col" className="userb">Name</th>
-                          <th scope="col" className="userb">Score</th>
+                          <th scope="col" className="userb p-2">Rank</th>
+                          <th scope="col" className="userb p-2">Name</th>
+                          <th scope="col" className="userb p-2">Score</th>
                           {/* <th scope="col" className="userb">Attempts</th> */}
-                          <th scope="col" className="userb">Time</th>
+                          <th scope="col" className="userb p-2">Time</th>
                         </tr>
                       </thead>
                       <tbody id="myTable">
                       
-                        <tr className="usera" >
-                          <td>{top6?.[3]?.rank}</td>
-                          <td>{top6?.[3]?.user1}</td>
-                          <td>{top6?.[3]?.score}</td>
-                          <td>{getFormatedTime(top6?.[3]?.lastUpdate)}</td>
+                        <tr className="usera px-2 py-2" >
+                          <td className="px-5 py-3  ">{top6?.[3]?.rank}</td>
+                          <td className="px-5 py-3  ">{top6?.[3]?.user1}</td>
+                          <td className="px-5 py-3  ">{top6?.[3]?.score}</td>
+                          <td className="px-5 py-3  ">{getFormatedTime(top6?.[3]?.lastUpdate)}</td>
                         </tr>
                         <tr className="usera" >
-                          <td>{top6?.[4]?.rank}</td>
-                          <td>{top6?.[4]?.user1}</td>
-                          <td>{top6?.[4]?.score}</td>
-                          <td>{getFormatedTime(top6?.[4]?.lastUpdate)}</td>
+                          <td className="px-5 py-3  ">{top6?.[4]?.rank}</td>
+                          <td className="px-5 py-3  ">{top6?.[4]?.user1}</td>
+                          <td className="px-5 py-3  ">{top6?.[4]?.score}</td>
+                          <td className="px-5 py-3  ">{getFormatedTime(top6?.[4]?.lastUpdate)}</td>
                         </tr>
                         <tr className="usera" >
-                          <td>{top6?.[5]?.rank}</td>
-                          <td>{top6?.[5]?.user1}</td>
-                          <td>{top6?.[5]?.score}</td>
-                          <td>{getFormatedTime(top6?.[5]?.lastUpdate)}</td>
+                          <td className="px-5 py-3  ">{top6?.[5]?.rank}</td>
+                          <td className="px-5 py-3  ">{top6?.[5]?.user1}</td>
+                          <td className="px-5 py-3  ">{top6?.[5]?.score}</td>
+                          <td className="px-5 py-3  ">{getFormatedTime(top6?.[5]?.lastUpdate)}</td>
                         </tr>
                      
                        </tbody>

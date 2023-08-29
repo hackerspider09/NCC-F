@@ -13,6 +13,7 @@ import Consolecontent from './consolecontent';
 import parse from 'html-react-parser'
 import "./tinymce.css"
 import HtmlReactParser from 'html-react-parser'
+import {  toast } from 'react-toastify';
 
 const subendPoint = "/api/submit/";
 
@@ -120,6 +121,8 @@ export default function Codingpage() {
 
   
   const handleSubmit = async (val) => {
+    setExecutedData([]);
+    const id = toast.loading("Compilation started");
     setisSubmit(val);
     setConsoleMenuOpen(!ConsoleMenuOpen);
     {ConsoleMenuOpen ?  setConsoleMenuOpen(ConsoleMenuOpen) : setConsoleMenuOpen(!ConsoleMenuOpen)}
@@ -159,15 +162,16 @@ export default function Codingpage() {
                     setIsButtonEnabled(false);
                     // setModalValue(data.return);
                     
-
-                }
-                else {
-                  setIsButtonEnabled(false);
+                    toast.update(id, { render: "Compilation Done", type: "success", isLoading: false, autoClose:3000 })
+                  }
+                  else {
+                    setIsButtonEnabled(false);
                     console.log("Error In fetch");
-                }
-            })
-            .catch((error) => {
-              setIsButtonEnabled(false);
+                  }
+                })
+                .catch((error) => {
+                  toast.update(id, { render: "Compilation Failed", type: "error", isLoading: false, autoClose:3000 })
+                  setIsButtonEnabled(false);
               console.clear();
                 console.log("enter in error ",error);
 
@@ -278,7 +282,7 @@ export default function Codingpage() {
           <CodeEditorWindow
             code={code}
             onChange={onChangenew}
-            language={language?.value}
+            language={language}
             theme={theme.value}
             questionId ={questionId}
             CodeSnippet = {CodeSnippet}

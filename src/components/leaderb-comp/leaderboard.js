@@ -102,9 +102,9 @@ const Leaderboard = () => {
     <body>
       <div> {loading && <LoaderComponent show={true} />}</div>
       <div className="row">
-        <h1 className="mt-4 mb-3 text-center">Leaderboard</h1>
+        <h1 className="mt-3 mb-2 text-center">Leaderboard</h1>
         <div className="searchFunc">
-        <input className="searchFunc2 px-3 py-2  mx-4" 
+        <input className="searchFunc2 px-3 py-2  mx-5" 
             type="text"
              value={searchQuery}
                onChange={(e) => setSearchQuery(e.target.value)}
