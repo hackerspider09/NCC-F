@@ -1,14 +1,14 @@
 import React ,{useState,useEffect } from 'react'
-import './consolecontent.css';
+import './consolecontent.css';  
 import "./tinymce.css"
-import parse from 'html-react-parser'
+import parse from 'html-react-parser'   
 import TextField from '@mui/material/TextField';
 import { BsCheck2Circle } from 'react-icons/bs';
-import { RxCrossCircled } from 'react-icons/rx';
+import { RxCrossCircled } from 'react-icons/rx'; 
 import {  toast } from 'react-toastify';
 
 
-export default function Consolecontent(props,{ isSubmit, data,codeInput,changedData, onDataChange , onTextFieldChange}) {
+export default function Consolecontent({isSubmit, data,codeInput,changedData, onDataChange , onTextFieldChange,...props}) {
   const [code, setCode] = useState({});
   const [Verdict, setVerdict] = useState("");
   const [IsSubmitted, setIsSubmitted] = useState(false);
@@ -19,26 +19,27 @@ export default function Consolecontent(props,{ isSubmit, data,codeInput,changedD
   useEffect(()=>{
     setCode(data);
     setCode(changedData);
-    setsampleInput(codeInput)
+    setsampleInput(codeInput);
     setIsSubmitted(isSubmit);
-    console.log("code  ",sampleInput)
-    console.log("code  ",code)
-    console.log("data  ",typeof(data))
-    console.log("data  ",data)
+    // console.log("code  ",sampleInput)
+    // console.log("code  ",code)
+    // console.log("data  ",typeof(data))
+    // console.log("data  ",data)
     console.log("change dat a ",changedData)
     console.log("is Submit",isSubmit)
   },[data,isSubmit])
 
   useEffect(() => {
+    
     if (changedData !== null) {
       // console.log("dsfsd ",code)
       setCode(changedData); // Update localData when changedData changes
     }
     if (isSubmit) {
       setIsSubmitted(true);
+      checkAllAC();
     }
     setsampleInput(codeInput);
-    checkAllAC();
 
     
   }, [changedData,isSubmit]);
@@ -55,6 +56,7 @@ export default function Consolecontent(props,{ isSubmit, data,codeInput,changedD
       // console.log("All statuses are AC");
       setallAC(true);
       setVerdict("Passed");
+      // toast.success("Congrats");
       
     }else{
       
@@ -82,19 +84,20 @@ export default function Consolecontent(props,{ isSubmit, data,codeInput,changedD
 //to get input to different comp
   const handleInputChange = (event) => {
     const newValue = event.target.value;
-    onTextFieldChange(newValue); // Call the callback with the new value
+  onTextFieldChange(newValue); // Call the callback with the new value
   };
 
 
   const statusColors = {
     "AC": "green", // Define the color for "AC" status
     "WA": "red",   // Define the color for other status, e.g., "WA"
-    "CE": "yellow",
+    "CE": "purple", // Define the color for
   };
 
   const handleClick = () => {
-    // Call the function passed from the parent component
-    props.onClick('Hello from child!');
+    if (props.onClick) {
+      props.onClick('Hello from child!');
+    }
   };
   
 
@@ -102,7 +105,7 @@ export default function Consolecontent(props,{ isSubmit, data,codeInput,changedD
     <div className="chaljabhai" id="test-cases">
       <div className="header">
       <h4 className='heading'> TEST-CASES</h4>
-      <button  className="closebtn3" onClick={handleClick} >✖️</button>
+      <button  className="closebtn3"  onClick={handleClick} >✖️</button>
       </div>
     
        
@@ -120,15 +123,15 @@ export default function Consolecontent(props,{ isSubmit, data,codeInput,changedD
           defaultValue={code?.input !== "" ? codeInput : ""}
           variant="filled"
           focused
-          inputProps={{ style: { color: "white" } }}
-          onChange={handleInputChange}
+          inputProps={{ style: { color: "white" } }}   
+          onChange={handleInputChange}   
           
         />
 
       </div>
 
 
-       <div className="block2 blockInsideconsoleblock">
+       <div className="block2 blockInsideconsoleblock">   
         <TextField
             id="output2"
             label="Output"
@@ -138,7 +141,7 @@ export default function Consolecontent(props,{ isSubmit, data,codeInput,changedD
             defaultValue={code?.error !== "" ? (
               code?.error
             ) : (
-              code.output
+              code.output 
             )}
             variant="filled"
             focused
@@ -161,7 +164,7 @@ export default function Consolecontent(props,{ isSubmit, data,codeInput,changedD
           {Object.entries(code).map(([testCaseName, testCaseData]) => (
                   
 
-                  <div className="test d-flex mx-3" key={testCaseName}  style={{ color: statusColors[testCaseData.status] }}>
+                  <div className="test d-flex mx-3" key={testCaseName}  style={{backgroundColor: statusColors[testCaseData.status] }}>
                     {testCaseName} &nbsp; {testCaseData.status} &nbsp; {testCaseData.status === "AC" ? <BsCheck2Circle/> : <RxCrossCircled/>}
                   </div>
                 ))}

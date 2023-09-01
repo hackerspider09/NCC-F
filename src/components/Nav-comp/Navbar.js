@@ -99,7 +99,7 @@ export default function Navbar() {
 
     <div className="Btn-div">
 
-          {loggedIn && localStorage.getItem("contractAccept") ?  < CountdownRedirect /> :" "} 
+          <p className="mb-0">{loggedIn && localStorage.getItem("contractAccept") ?  < CountdownRedirect /> :" "} </p>
       
 
             <ul> { loggedIn && localStorage.getItem("contractAccept") ? <Link to="/question"  className='nav-link' >QuestionHub</Link> : "" } </ul>

@@ -19,6 +19,12 @@
     background: rgb(34,5,65);
     background: linear-gradient(90deg, rgba(34,5,65,1) 29%, rgba(106,20,135,1) 54%, rgba(21,6,57,1) 77%);
   }
+
+  .rawdat{
+    max-height: 85vh;
+    min-height: 80vh;
+    overflow-y: scroll;
+  }
   
   /* Style for the title */
   .mt-4 {

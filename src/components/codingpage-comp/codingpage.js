@@ -1,4 +1,4 @@
-import {React,useState,useEffect} from 'react'
+import {React,useState,useEffect} from 'react' 
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { useParams,useNavigate,Link } from 'react-router-dom';
 import "./codingpage.css";
@@ -22,7 +22,7 @@ const subendPoint = "/api/submit/";
 export default function Codingpage() {
   const nav = useNavigate();
   
-  const [ConsoleMenuOpen, setConsoleMenuOpen] = useState(false);
+  const [ConsoleMenuOpen, setConsoleMenuOpen] = useState(false); 
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [Emoji, setEmoji] = useState(false);
   const [QuesData,setQuesData] = useState([]);
@@ -45,7 +45,7 @@ export default function Codingpage() {
   }
   
 
-  const handleButtonClick = (buttonkey) => {
+  const handleButtonClick = (buttonkey) => {  
     if (highlightedButton === buttonkey) {
       setHighlightedButton(null);
     } else {
@@ -143,7 +143,7 @@ export default function Codingpage() {
         submissionpayload['input']=QuesData.sampleIp;
     }
 
-    console.log(submissionpayload)
+    console.log("submission payload ",submissionpayload)
     
     // e.preventDefault();
     addAuthToken(getToken());
@@ -153,7 +153,7 @@ export default function Codingpage() {
                 if (response.status) {
                     console.log("enter in then if ");
                    var  data = response.data;
-                    console.log(data.input);
+                    console.log("submission output ",data);
                     setExecutedData(data);
                     // console.log(typeof(data));
                     // console.log(typeof(jdata));
@@ -265,7 +265,7 @@ export default function Codingpage() {
     
     {/* <!-- The code Editor Section Starts here ... --> */}
     <div className='badadivcode'>
-    <div className="h-4 w-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"></div>
+    {/* <div className="h-4 w-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"></div> */}
       <div className="selector">
         <div className="px-4 py-2">
           <LanguagesDropdown onSelectChange={onSelectChange} />
@@ -301,15 +301,7 @@ export default function Codingpage() {
     </div>
 
     <div className="submit-strip">
-        
-        <button type="button" className="console-btn  btn-outline-dark" data-toggle="collapse" id="console-btn"
-          data-target="#test-cases"         
-          onClick={toggleModal}>
-          Console {ConsoleMenuOpen ?  '🔽' : '🔼'}
-          <ion-icon name="chevron-up-outline" className="up mx-2 "></ion-icon>
-          <ion-icon name="chevron-down-outline" className="down hidden"></ion-icon>
-        </button>
-        {ConsoleMenuOpen && (
+    {ConsoleMenuOpen && (
                             // <div
                                 
                             //     className=""
@@ -317,6 +309,14 @@ export default function Codingpage() {
                                 <Consolecontent onClick={toggleModal} data={ExecutedData} isSubmit={isSubmit} codeInput={sampleInput} onDataChange={handleDataChange} changedData={ExecutedData}  onTextFieldChange={handleTextFieldChange}/>
                             //</div>
                         )}
+        <button type="button" className="console-btn  btn-outline-dark" data-toggle="collapse" id="console-btn"
+          data-target="#test-cases"         
+          onClick={toggleModal}>
+          Console {ConsoleMenuOpen ?  '🔽' : '🔼'}
+          <ion-icon name="chevron-up-outline" className="up mx-2 "></ion-icon>
+          <ion-icon name="chevron-down-outline" className="down hidden"></ion-icon>
+        </button>
+       
       
       <div className="submit-btn">
         <button type="button" className="run-btn   btn-outline-dark"  onClick={() => handleSubmit(false)} disabled={isButtonEnabled }  style={{ cursor: isButtonEnabled ? 'not-allowed' : 'default' }}>Run</button>

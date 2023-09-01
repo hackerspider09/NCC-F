@@ -18,8 +18,9 @@ const CodeEditorWindow = ({ onChange, language, code, theme ,questionId }) => {
   const [CodeSnippet,setCodeSnippet] = useState("");
   const CodeSyntax = {
     "cpp":"#include <bits/stdc++.h>\nusing namespace std;\nint main() {\n// your code goes here\nreturn 0;\n}",
-    "c":"#include <stdio.h>\nint main() {\n\nprintf('Hello, world!');\n\nreturn 0;\n}",
-    "python":"#Start Your Program Here..."
+    "c":'#include <stdio.h>\nint main() {\n\nprintf("Hello, World!");\nreturn 0;\n}',
+    "python":"#Start Your Program Here...",
+    "java":"import java.util.Scanner;\npublic class solution {\npublic static void main(String[] args) {\n// Write Your Code Here \n}\n}"
   }
  
   // const [currentTemplate, setCurrentTemplate] = useState(defaultTemplate );

@@ -45,9 +45,19 @@ bottom: 0;
 
 .Btn-div{
   display:flex;
-  padding-top: 2%;
+  align-items: center;
+ 
+}
+.Btn-div .p{
+  margin-bottom: 0!important;
+}
+
+ul{
+  margin-bottom: 0!important;
 }
 
 .btnlog:hover{
-  border-width: 2px!important;
+ border: 2px solid red!important;
+ box-shadow: 0px 0px 8px red inset;
+ font-weight: bold;
 }

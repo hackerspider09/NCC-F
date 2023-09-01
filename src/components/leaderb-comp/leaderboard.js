@@ -101,7 +101,7 @@ const Leaderboard = () => {
     <>
     <body>
       <div> {loading && <LoaderComponent show={true} />}</div>
-      <div className="row">
+      <div className="row rawdat">
         <h1 className="mt-3 mb-2 text-center">Leaderboard</h1>
         <div className="searchFunc">
         <input className="searchFunc2 px-3 py-2  mx-5" 

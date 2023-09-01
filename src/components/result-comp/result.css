@@ -38,6 +38,7 @@
     width: auto;
     align-self: center;
     margin: 0px auto;
+
 }
 
 .collapse{
@@ -149,6 +150,7 @@
 
 .name {
     background-color: transparent;
+    color:white
 }
 
 .score{
@@ -240,7 +242,7 @@
 }
 
 #card1{
-    height: 200px;
+    height: 210px;
     bottom: 0;
     /* border: 2px solid #2090b5; */
     /* box-shadow: -2px 2px 10px #c0c0c0; */
@@ -252,7 +254,7 @@
 }
 
 #card3{
-    height: 190px;
+    height: 210px;
     /* border: 2px solid #2090b5; */
     /* box-shadow: 2px 2px 10px #cd7f32; */
 }

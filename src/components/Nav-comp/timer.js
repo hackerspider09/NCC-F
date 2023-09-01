@@ -78,7 +78,7 @@ const CountdownRedirect = () => {
 
   return (
     <div>
-      <p>Time : {remainingTime}</p>
+      <p className="mb-0">Time : {remainingTime}</p>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 /* Head strip for ques no , score and timer */
 .mainBody{
-    overflow-y:hidden;
+    overflow-y:scroll;
 position:relative;
-  /* height: 100vh; */
+  height: 96vh;
   /* width: 1400px;; */
   background: rgb(6,4,32);
   /* background: linear-gradient(90deg  rgb(51, 8, 89) 28%, rgb(45, 9, 67) 48%, rgb(41, 8, 74) 81%, rgba(5,5,36,1) 91%); */
@@ -10,11 +10,11 @@ position:relative;
     /* background-image: linear-gradient(201deg, #064346 -23%, #12100e 130%); */
     /* background-image: linear-gradient(227deg, rgba(6,4,32,1) 15%, rgba(20,8,89,1) 28%, rgba(127,58,180,1) 48%, rgba(9,8,74,1) 81%, rgba(5,5,36,1) 91%); */
     /* background-color: #010B19; */
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display:flex;
     justify-content: center;
-    align-items:center;
-    padding-bottom: 55px;
+    /* align-items:center; */
+    /* padding-bottom: 5%; */
     margin: 0;
   
 }
@@ -107,20 +107,20 @@ color: #fff;
 /* codeing section */
 
 .coding{
-  height: 80vh;
+ 
+  width: 100%;
   margin: 5px;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 50% 50%;  
   /* margin: auto; */
   justify-content:flex-start;
   align-items: center;
-  padding:10px ;
-  row-gap: 30px;
+  /* padding:10px ; */
+  /* row-gap: 30px; */
   margin-top: 0;
   overflow-y: hidden;
   overflow-x: hidden;
-  position: fixed;
-  display:flex;
+  max-height: 86%;
   /* width:1600px;
   margin-right: 200px; */
 
@@ -133,10 +133,11 @@ color: #fff;
   padding: 0px 8px;
   /* display: grid; */
   grid-template-rows: auto;
-  height: 80vh; 
-  width: 640px;
-  padding-top: 0px;
- 
+  /* height: 80vh; 
+   */
+   padding-top: 14px;
+   height:100%;
+  flex:1;
   font-size: small;
 
 }
@@ -144,11 +145,12 @@ color: #fff;
 {
   overflow-x: hidden;
   overflow-y: scroll; 
-
+  max-height: 457px;
+  min-height:366px;
   padding-right: 20px;
   padding-left: 0px;
-  width: 46.875rem;
-  height:26.25rem;
+  /* width: 46.875rem;
+  height:26.25rem; */
 margin-bottom:20px;
 margin-left:15px;
 
@@ -159,21 +161,22 @@ margin-left:15px;
 /* } */ 
 /* code answer */
 .codingpart{
-  margin:0px auto; 
-  width: 550px;  
+  margin:0px auto;   
+  padding-top: 14px;
   display: grid;  
   grid-template-rows: 7% 88% 7%;  
   overflow-x:hidden;
-  overflow-y:hidden; 
-  margin-left: 180px; 
-  width: 720px;  
-  height: 450px;
-margin-bottom: 0px;
- 
+  overflow-y:hidden;
+  width: 96%;  
+  height:59%;
+ margin-bottom: 0px;
+ overflow-x: scroll;  
 }
+
+
 .code-section{
   
-  margin-top: 3%;
+  /* margin-top: 3%; */
   display: grid;
   padding-bottom: 10px;
   padding-right: 20px;
@@ -378,19 +381,18 @@ margin-bottom: 0px;
 
         }
       }
-/* BOX ANIMATIONS*/
-/*scroll Bar*/
-/* width */
-/* width */
+
+
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
   
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px transparent;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* Handle */
@@ -457,6 +459,11 @@ margin-bottom: 0px;
 #test-cases{
   overflow-y: auto;
   padding: 0px 10px;
+  width: 90%;
+  margin-right: 2%;
+  position: absolute;
+  bottom: 100%;
+  
 }
 
 .Status{
@@ -650,13 +657,17 @@ ion-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content:flex-start;
+  flex: 1;
+  height: 100%;
+  padding-top: 14px;
+
 }
 .selector{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
+ 
 }
 
 .submit-strip{
@@ -665,7 +676,8 @@ ion-icon {
   align-items: center;
   justify-content: center;
   height:70px;
-  margin-bottom:50px;
+  width: 100%;
+  /* margin-bottom:50px; */
 }
 .css-tj5bde-Svg{
   color: black;
@@ -686,7 +698,7 @@ ion-icon {
   margin: 0 0.1em 0.1em 0;
   border: 0.2rem solid  rgba(154, 86, 206, 0.911);
   border-radius: 0.65em;
-  box-sizing: border-box;
+  box-sizing: border-box;  
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-weight:bold;
@@ -695,7 +707,7 @@ ion-icon {
   text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
   text-align: center;
   transition: all 0.2s;
-  background-color: rgb(19, 8, 43);
+  background-color: rgb(19, 8, 43); 
   width: 3.3rem; /* Adjust this value as needed */
   height: 2.5rem; /* Adjust this value to match the width */
   /* margin-right: 5px; */
@@ -709,7 +721,11 @@ ion-icon {
   border-radius: 0.65em;
 }
 
-
+@media (max-width: 1600px) {
+  #test-cases{
+    margin-left: 0%;
+  }
+}
 
 
 
