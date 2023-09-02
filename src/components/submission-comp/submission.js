@@ -133,7 +133,7 @@ const [Subdata,setSubdata] = useState([]);
             item.id.toString().includes(searchText.toLowerCase())
           )}
           pagination
-          className="col custom-table"
+          className="submissiontable"
         />
         <Modal className="modalpanti" isOpen={isModalOpen} onRequestClose={closeModal}>
           <div className='modalinside'>

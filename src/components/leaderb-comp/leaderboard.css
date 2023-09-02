@@ -37,12 +37,7 @@
   }
   
   /* Style for table header */
-  .rdt_TableHead {
-    background-color: #991010;  
-    font-weight: bold;
-    color:#000000; 
-
-  }
+  
   
   /* Style for table rows */
   .rdt_TableRow {
@@ -115,7 +110,7 @@ background: linear-gradient(90deg, rgba(58,6,58,1) 15%, rgba(110,31,146,1) 50%, 
     border-radius: 5px;
   }
 
-  .buGObk {
+.buGObk {
 background-color: none;  
   }
 
@@ -151,3 +146,6 @@ background-color: none;
     color: #000000;
     fill: white!important;
   }
+.ctoDCG{
+  background-color: #45096d;
+}

@@ -122,7 +122,7 @@ const Leaderboard = () => {
             pagination
             highlightOnHover
             responsive
-            className="col custom-table"
+            className="leaderboardtable"
           />
         </div>
       </div>
