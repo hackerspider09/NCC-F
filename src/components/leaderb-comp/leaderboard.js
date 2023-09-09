@@ -21,18 +21,18 @@ const Leaderboard = () => {
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
             .then((response) => {
-                console.log("enter in then ");
+                // console.log("enter in then ");
                 if (response.status) {
-                    console.log("enter in then if ");
+                    // console.log("enter in then if ");
                     data = response.data;
                     if (localStorage.getItem("isJunior")){
-                      console.log("junior")
+                      // console.log("junior")
                       var jdata = data.juniorLeaderboard;
                     }else{
-                      console.log("senior")
-                      var jdata = data.seniorLeaderboard;
+                      // console.log("senior")
+                       jdata = data.seniorLeaderboard;
                     }
-                    console.log(data);
+                    // console.log(data);
                     // console.log(jdata);
                     
                     // console.log(typeof(data));
@@ -43,8 +43,8 @@ const Leaderboard = () => {
                     
                     setDataSet(jdata);
 
-                    console.log("data ",typeof(dataSet));
-                    console.log(dataSet);
+                    // console.log("data ",typeof(dataSet));
+                    // console.log(dataSet);
                     setTimeout(()=>{
                       setLoading(false);
 
@@ -54,12 +54,12 @@ const Leaderboard = () => {
                 }
                 else {
                     
-                    console.log("Error In fetch");
+                    // console.log("Error In fetch");
                 }
             })
             .catch((error) => {
-                
-                console.log("enter in error ",error);
+              console.clear();
+                // console.log("enter in error ",error);
 
             })
   },[]);
@@ -79,8 +79,8 @@ const Leaderboard = () => {
   // ];
 
   const columns = [
-    { name: "Rank", selector: "rank", sortable: true },
-    { name: "Username", selector: "user1", sortable: true },
+    { name: "Rank",  selector: (row, i) => row['rank'], sortable: true },
+    { name: "Username", selector: (row, i) => row['user1'], sortable: true },
     { name: "Q1", selector: "questionSolvedByUser.Q1", sortable: true },
     { name: "Q2", selector: "questionSolvedByUser.Q2", sortable: true },
     { name: "Q3", selector: "questionSolvedByUser.Q3", sortable: true },

@@ -20,10 +20,10 @@ const Result = () => {
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
             .then((response) => {
-                console.log("enter in then ");
+                // console.log("enter in then ");
                 if (response.status) {
-                    console.log("enter in then if ");
-                    console.log(response.data);
+                    // console.log("enter in then if ");
+                    // console.log(response.data);
                     var personalR = response.data.personalRank;
                     var top6R = response.data.top6;
                     setResultData(Resultdata => ({
@@ -36,20 +36,20 @@ const Result = () => {
                     }));
                     setTotal(response.data.totalSub);
                     setRight(response.data.rightSub);
-                    console.log(response.data.totalSub)
-                    console.log(response.data.rightSub)
+                    // console.log(response.data.totalSub)
+                    // console.log(response.data.rightSub)
                     
 
 
                 }
                 else {
                     
-                    console.log("Error In fetch");
+                    // console.log("Error In fetch");
                 }
             })
             .catch((error) => {
-                
-                console.log("enter in error ",error);
+              console.clear();
+                // console.log("enter in error ",error);
 
             })
   },[]);

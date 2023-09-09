@@ -35,14 +35,14 @@ export const isTimeOver =()=>{
             })
             .catch((error) => {
                 
-                console.log("enter in error ",error);
+                // console.log("enter in error ",error);
 
             });
 
     
     // console.log(new Date())
     var remain = countDown - now;
-    console.log("timeisover ",remain); 
+    // console.log("timeisover ",remain); 
     if (parseInt(remain) < 0){
       return true;
     }else{

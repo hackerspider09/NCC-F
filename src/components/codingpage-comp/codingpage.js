@@ -10,9 +10,9 @@ import ThemeDropdown from "./ThemesDropdown";
 import LanguagesDropdown from "./LanguagesDropdown"; 
 import { defineTheme } from "../../lib/defineTheme";
 import Consolecontent from './consolecontent';
-import parse from 'html-react-parser'
+
 import "./tinymce.css"
-import HtmlReactParser from 'html-react-parser'
+
 import {  toast } from 'react-toastify';
 
 const subendPoint = "/api/submit/";
@@ -27,9 +27,9 @@ export default function Codingpage() {
   const [Emoji, setEmoji] = useState(false);
   const [QuesData,setQuesData] = useState([]);
   const [ExecutedData,setExecutedData] = useState([]);
-  const [ExecutedChangedData, setExecutedChangedData] = useState(null);
+  // const [ExecutedChangedData, setExecutedChangedData] = useState(null);
   const [Questiontoggle,setQuestiontoggle] = useState({});
-  const [CodeSnippet,setCodeSnippet] = useState("");
+  const [CodeSnippet] = useState("");
   
   const [isSubmit, setisSubmit] = useState(false);
   const [sampleInput, setsampleInput] = useState("");
@@ -38,11 +38,11 @@ export default function Codingpage() {
   const [language, setLanguage] = useState(languageOptions[0]);
   const [textFieldValue, setTextFieldValue] = useState('');   //to take input from user
   const [highlightedButton, setHighlightedButton] = useState(null);
-  const CodeSyntax = {
-    "cpp":"#include <bits/stdc++.h>\nusing namespace std;\nint main() {\n// your code goes here\nreturn 0;\n}",
-    "c":"",
-    "python":"#Start Your Program Here..."
-  }
+  // const CodeSyntax = {
+  //   "cpp":"#include <bits/stdc++.h>\nusing namespace std;\nint main() {\n// your code goes here\nreturn 0;\n}",
+  //   "c":"",
+  //   "python":"#Start Your Program Here..."
+  // }
   
 
   const handleButtonClick = (buttonkey) => {  
@@ -115,6 +115,7 @@ export default function Codingpage() {
               console.log("enter in error ",error);
               console.clear();
                 console.log("enter in error ",error);
+                console.clear();
 
             })
   },[endPoint]);

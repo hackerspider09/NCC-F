@@ -6,13 +6,13 @@ import './App.css';
 import Instruct from "./components/instruct-comp/instruct";
 
 import Codingpage from "./components/codingpage-comp/codingpage";
-import Submission from "./components/submission-comp/submission";
+// import Submission from "./components/submission-comp/submission";
 import Leaderboard from "./components/leaderb-comp/leaderboard";
 import Result from "./components/result-comp/result";
 import Footer from "./components/footer-comp/footer";
 import Quescards from "./components/quescard-comp/quescards";
 import Login from "./components/loginpage-comp/login";
-import QuestionHubPage from "./components/test_component/hello69";
+// import QuestionHubPage from "./components/test_component/hello69";
 // import axios from "./components/axios";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     const userIsLoggedIn = localStorage.getItem('isLogin') === 'true';
     const contractAccept = localStorage.getItem('contractAccept') === 'true';
-    console.log("cecking ",userIsLoggedIn);
+    // console.log("cecking ",userIsLoggedIn);
 
     setLoggedIn(userIsLoggedIn);
     setIsAccepted(contractAccept);
@@ -38,10 +38,10 @@ function App() {
   // }, [loggedIn,accessExpired]);
 
 
-  const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
-    setLoggedIn(false);
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('isLoggedIn');
+  //   setLoggedIn(false);
+  // };
 
 
   return (
@@ -69,8 +69,8 @@ function App() {
           <Route path="/" element={loggedIn  ? IsAccepted ? <Navigate to="/question" /> : <Navigate to="/instruction" /> : <Login />} />
           <Route path="/login" element={loggedIn  ? IsAccepted ? <Navigate to="/question" /> : <Navigate to="/instruction" /> : <Login />} />
           <Route path="/instruction" element={loggedIn && !accessExpired && !IsAccepted ?  <Instruct />  : loggedIn && IsAccepted ? <Navigate to="/question" /> : <Navigate to="/" />} />
-          {/* <Route path="/result" element={ loggedIn && accessExpired ? <Quescards /> : loggedIn ? <Result /> : <Navigate to="/" />} /> */}
-          <Route path="/result" element={ <Result />} />
+          <Route path="/result" element={ loggedIn && !accessExpired ? <Quescards /> : loggedIn ? <Result /> : <Navigate to="/" />} />
+          {/* <Route path="/result" element={ <Result />} /> */}
           <Route path="/question" element={loggedIn && !accessExpired ? <Quescards /> : <Navigate to="/" />} />
           <Route path="/leaderboard" element={loggedIn && !accessExpired ? <Leaderboard /> : <Navigate to="/" />} />
           {/* <Route path="/submission" element={<Submission/>} /> */}

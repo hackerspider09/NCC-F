@@ -9,16 +9,16 @@ const ThemeDropdown = ({ handleThemeChange, theme }) => {
   var entry2 = def.concat(entry);
   return (
     <Select
-      placeholder={`Select Theme`}
+      placeholder={`Select Theme`}  
       //  options={languageOptions}
       options={entry2.map(([themeId, themeName]) => ({
         label: themeName,
         value: themeId,
         key: themeId,
       }))}
-      value={theme}
-      styles={customStyles}
-      onChange={handleThemeChange}
+      value={theme}  
+      styles={customStyles} 
+      onChange={handleThemeChange}  
     />
   );
 };

@@ -1,11 +1,11 @@
 import React,{useEffect,useState} from 'react';
 import './quescards.css'; // Import your custom CSS
-import { Link ,useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { AxiosInstance ,addAuthToken} from '../../Utils/AxiosConfig';
 import { getToken} from '../../Utils/utils';
 import { BsCheck2Circle } from 'react-icons/bs';
-import {  toast } from 'react-toastify';
-import LoaderComponent from "../loader/loader"; 
+// import {  toast } from 'react-toastify';
+// import LoaderComponent from "../loader/loader"; 
 // import Graph from "../Graph/graph"
 
 const endPoint = "/api/questions/"
@@ -15,20 +15,20 @@ const tasks = [
 ];
 
 function App() {
-  const nav = useNavigate();
-  const [loading, setLoading] = useState(false);
+  // const nav = useNavigate();
+  // const [loading, setLoading] = useState(false);
 const [Qdata, setQdata] = useState(tasks);
   useEffect(()=>{
    
-    setLoading(true);
+    // setLoading(true);
     
     addAuthToken(getToken());
     AxiosInstance.get(endPoint)
             .then((response) => {
-                console.log("enter in then ");
+                // console.log("enter in then ");
                 if (response.status) {
-                    console.log("enter in then if ");
-                    console.log(response.data);
+                    // console.log("enter in then if ");
+                    // console.log(response.data);
                     setQdata(response.data)
                     const questionDetails = {};
                   for(let i = 1; i <=response.data.length; i++) {
@@ -43,12 +43,12 @@ const [Qdata, setQdata] = useState(tasks);
                   // },5000);
                   }
                 else {
-                  console.log("Error In fetch");
+                  // console.log("Error In fetch");
                 }
               })
               .catch((error) => {
                 // nav("/question");
-              console.log("enter in error ",error);
+              // console.log("enter in error ",error);
               console.clear();
 
 
@@ -58,11 +58,11 @@ const [Qdata, setQdata] = useState(tasks);
   },[]);
 
 
-  const buttonStyle = {
-    backgroundColor: Qdata.solvedByTeam ? 'green' : '#0e0758', // Change colors as needed
-    color: 'white', // Text color
-    // Add other styles you want to apply
-  };
+  // const buttonStyle = {
+  //   backgroundColor: Qdata.solvedByTeam ? 'green' : '#0e0758', // Change colors as needed
+  //   color: 'white', // Text color
+  //   // Add other styles you want to apply
+  // };
 
 
 

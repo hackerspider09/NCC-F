@@ -1,11 +1,10 @@
 import React from 'react';
 import './login.css';
-import { useState,useEffect } from "react";
-import {Navigate} from "react-router-dom";
+import { useState } from "react";
+
 import { useNavigate } from "react-router";
-import axios from 'axios';
+
 import { AxiosInstance } from '../../Utils/AxiosConfig';
-import { getToken } from '../../Utils/utils';
 import {  toast } from 'react-toastify';
 const endPoint = "/api/login/" 
 
@@ -33,7 +32,7 @@ export default function Login() {
 
 
         const userlogin = (loginPayload)=>{
-            console.log("enter in login");
+            // console.log("enter in login");
             const id = toast.loading("Please wait...");
             // toast.dark('This is Toast Notification for Dark');
             // toast.info('This is Toast Notification for Dark');
@@ -45,9 +44,9 @@ export default function Login() {
 
             AxiosInstance.post(endPoint,loginPayload)
             .then((response) => {
-                console.log("enter in then ");
+                // console.log("enter in then ");
                 if (response.status) {
-                    console.log("enter in then if ");
+                    // console.log("enter in then if ");
                     localStorage.setItem("isLogin", true);
                     localStorage.setItem("token", response.data.token);
                     localStorage.setItem("isJunior", response.data.isJunior);
@@ -60,13 +59,13 @@ export default function Login() {
                 }
                 else {
                     toast.update(id, { render: response.data.error, type: "error", isLoading: false, autoClose:3000 })
-                    console.log("login failed");
+                    // console.log("login failed");
                 }
             })
             .catch((error) => {
               toast.update(id, { render: error.response.data.msg, type: "error", isLoading: false, autoClose:3000 })
               console.clear();
-                console.log("enter in error +",error.response);
+                // console.log("enter in error +",error.response);
             
                 setLogincred(Logincred)
             })
@@ -80,34 +79,34 @@ return (
     <>
 <div className="LoginBox">
 
-<div class="controlheading">
+<div className="controlheading">
     <h1>Login </h1>
   </div>
-<form class="form" autocomplete="off"  onSubmit={submitLoginForm} >
+<form className="form" autoComplete="off"  onSubmit={submitLoginForm} >
  
   
-  <div class="control block-cube block-input">
-    <input name="username" type="text" placeholder="Username"  required="true" onChange={handleChange} />
-    <div class="bg-top">
-      <div class="bg-inner"></div>
+  <div className="control block-cube block-input">
+    <input name="username" type="text" placeholder="Username"  required={true} onChange={handleChange} />
+    <div className="bg-top">
+      <div className="bg-inner"></div>
     </div>
-    <div class="bg-right">
-      <div class="bg-inner"></div>
+    <div className="bg-right">
+      <div className="bg-inner"></div>
     </div>
-    <div class="bg">
-      <div class="bg-inner"></div>
+    <div className="bg">
+      <div className="bg-inner"></div>
     </div>
   </div>
-  <div class="control block-cube block-input">
-    <input name="password" type="password" placeholder="Password"  required="true" onChange={handleChange} />
-    <div class="bg-top">
-      <div class="bg-inner"></div>
+  <div className="control block-cube block-input">
+    <input name="password" type="password" placeholder="Password"  required={true} onChange={handleChange} />
+    <div className="bg-top">
+      <div className="bg-inner"></div>
     </div>
-    <div class="bg-right">
-      <div class="bg-inner"></div>
+    <div className="bg-right">
+      <div className="bg-inner"></div>
     </div>
-    <div class="bg">
-      <div class="bg-inner"></div>
+    <div className="bg">
+      <div className="bg-inner"></div>
     </div>
   </div>
 
@@ -118,17 +117,17 @@ return (
                     <span>Junior</span></label><label className="radio" id="b-button"><input name="im-buttons"
                         type="radio" id="b-button" /><span>Senior</span></label></div> */}
 
-  <button class="btn block-cube block-cube-hover" type="submit">
-    <div class="bg-top">
-      <div class="bg-inner"></div>
+  <button className="btn block-cube block-cube-hover" type="submit">
+    <div className="bg-top">
+      <div className="bg-inner"></div>
     </div>
-    <div class="bg-right">
-      <div class="bg-inner"></div>
+    <div className="bg-right">
+      <div className="bg-inner"></div>
     </div>
-    <div class="bg">
-      <div class="bg-inner"></div>
+    <div className="bg">
+      <div className="bg-inner"></div>
     </div>
-    <div class="text">Log In</div>
+    <div className="text">Log In</div>
   </button>
 
 </form>

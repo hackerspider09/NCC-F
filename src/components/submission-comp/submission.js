@@ -10,16 +10,16 @@ import { getToken} from '../../Utils/utils';
 
 
 
-const getFormatedTime = (timestamp) => {
-  const date = new Date(timestamp);
-  const hours = date.getHours().toString().padStart(2, '0');
-  const minutes = date.getMinutes().toString().padStart(2, '0');
-  const seconds = date.getSeconds().toString().padStart(2, '0');
+// const getFormatedTime = (timestamp) => {
+//   const date = new Date(timestamp);
+//   const hours = date.getHours().toString().padStart(2, '0');
+//   const minutes = date.getMinutes().toString().padStart(2, '0');
+//   const seconds = date.getSeconds().toString().padStart(2, '0');
   
-  const formattedTime = `${hours}:${minutes}:${seconds}`;
+//   const formattedTime = `${hours}:${minutes}:${seconds}`;
   
-  return formattedTime // Display formatted time in h:mm:ss format
-}
+//   return formattedTime // Display formatted time in h:mm:ss format
+// }
 
 const statusColors = {
   "AC": "green", // Define the color for "AC" status
@@ -30,7 +30,7 @@ const statusColors = {
 export default function Submission(props) {
 
 
-  const [searchText, setSearchText] = useState('');
+  const [searchText] = useState('');
   const [selectedCode, setSelectedCode] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);   //for copy code
@@ -78,25 +78,25 @@ const closeModal = () => {
       
 const [Subdata,setSubdata] = useState([]);
     useEffect(()=>{
-      console.log(endPoint);
+      // console.log(endPoint);
         addAuthToken(getToken());
         AxiosInstance.get(endPoint)
                 .then((response) => {
                     console.log("enter in then ");
                     if (response.status) {
-                        console.log("enter in then if ");
-                        console.log(response.data);
+                        // console.log("enter in then if ");
+                        // console.log(response.data);
                         
                         setSubdata(response.data)
                     }
                     else {
                         
-                        console.log("Error In fetch");
+                        // console.log("Error In fetch");
                     }
                 })
                 .catch((error) => {
-                    
-                    console.log("enter in error ",error);
+                  console.clear();
+                    // console.log("enter in error ",error);
     
                 })
 
